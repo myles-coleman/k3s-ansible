@@ -1,0 +1,5 @@
+.env/
+*.log
+ansible.cfg
+kubeconfig
+token.yml

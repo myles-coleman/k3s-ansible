@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readarr
+  namespace: readarr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: readarr
+  template:
+    metadata:
+      labels:
+        app: readarr
+    spec:
+      containers:
+      - name: readarr
+        image: lscr.io/linuxserver/readarr:develop
+        env:
+        - name: UMASK
+          value: "002"
+        - name: TZ
+          value: "Europe/London"
+        ports:
+        - containerPort: 8787
+        volumeMounts:
+        - name: config-volume
+          mountPath: /config
+        - name: data-volume
+          mountPath: /data
+      volumes:
+      - name: config-volume
+        persistentVolumeClaim:
+          claimName: readarr-config-pvc
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: readarr-data-pvc

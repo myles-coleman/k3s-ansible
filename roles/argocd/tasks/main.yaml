@@ -1,0 +1,47 @@
+---
+- name: Create ArgoCD namespace
+  kubernetes.core.k8s:
+    api_version: v1
+    kind: Namespace
+    name: argocd
+    state: present
+
+- name: Apply ArgoCD CRDs
+  kubernetes.core.k8s:
+    state: present
+    namespace: argocd
+    src: https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+- name: Apply IngressRoute
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'ingressroute.j2') }}"
+
+- name: Update ConfigMap
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'configmap.j2') }}"
+
+- name: Wait for ArgoCD resources to finish spinning up
+  pause:
+    seconds: 150
+
+- name: Generate argocd admin password
+  shell: kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+  register: argocd_password
+
+- debug:
+    var: argocd_password.stdout
+
+- name: Find all application directories in manifests
+  find:
+    paths: "{{ playbook_dir }}/manifests"
+    file_type: directory
+    recurse: no
+  register: app_dirs
+
+- name: Create ArgoCD applications for each directory
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'application.j2') }}"
+  loop: "{{ app_dirs.files }}"

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "{{ item.path | basename }}"
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: 'https://github.com/myles-coleman/k3s-ansible.git'
+    targetRevision: HEAD
+    path: "{{ 'manifests/' + item.path | basename }}"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

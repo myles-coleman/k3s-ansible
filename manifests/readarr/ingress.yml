@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: readarr
+  namespace: readarr
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`readarr.cowlab.org`)
+      kind: Rule
+      services:
+        - name: readarr
+          port: 8787
+  # tls:
+  #   secretName: cowlab-production-tls

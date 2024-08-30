@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaultwarden
+  namespace: vaultwarden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vaultwarden
+  template:
+    metadata:
+      labels:
+        app: vaultwarden
+    spec:
+      containers:
+      - name: vaultwarden
+        image: vaultwarden/server:latest
+        env:
+        - name: TZ
+          value: "Etc/UTC"
+        - name: DOMAIN
+          value: "https://vaultwarden.cowlab.org"
+        - name: SIGNUPS_DOMAINS_WHITELIST
+          value: "https://vaultwarden.cowlab.org"
+        - name: EMERGENCY_ACCESS_ALLOWED
+          value: "true"
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: vaultwarden-data-pvc
