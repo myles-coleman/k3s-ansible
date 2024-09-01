@@ -7,4 +7,4 @@ resources:
   - deployment.yml
   - service.yml
   - ingress.yml
-  # - cert.yml
+  - cert.yml
