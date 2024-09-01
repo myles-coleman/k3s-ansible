@@ -4,9 +4,9 @@ metadata:
   name: homer-cert
   namespace: homer
 spec:
-  secretName: cowlab-staging-tls
+  secretName: cowlab-production-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
     kind: ClusterIssuer
   commonName: "*.cowlab.org"
   dnsNames:
