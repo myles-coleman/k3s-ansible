@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /mnt/md0/docker-config/assets
+    path: /mnt/md0/docker-config/homer/assets
     server: 10.0.0.150
   persistentVolumeReclaimPolicy: Retain

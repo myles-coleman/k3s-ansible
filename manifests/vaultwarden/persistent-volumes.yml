@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path: /mnt/md0/docker-config/data
+    path: /mnt/md0/docker-config/vaultwarden/data
     server: 10.0.0.150
   persistentVolumeReclaimPolicy: Retain
