@@ -36,15 +36,15 @@
     state: present
     definition: "{{ lookup('template', 'secret-cf-token.j2') }}"
   
-# - name: Apply Staging ClusterIssuer
-#   kubernetes.core.k8s:
-#     state: present
-#     definition: "{{ lookup('template', 'letsencrypt-staging.j2') }}"
+- name: Apply Staging ClusterIssuer
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'letsencrypt-staging.j2') }}"
 
-# - name: Apply Stagging Certificate
-#   kubernetes.core.k8s:
-#     state: present
-#     definition: "{{ lookup('template', 'staging-cert.j2') }}"
+- name: Apply Stagging Certificate
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'staging-cert.j2') }}"
 
 - name: Apply Production ClusterIssuer
   kubernetes.core.k8s:
