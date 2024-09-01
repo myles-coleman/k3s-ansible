@@ -14,5 +14,20 @@ spec:
       services:
         - name: prowlarr
           port: 9696
-  # tls:
-  #   secretName: cowlab-production-tls
+  tls:
+    secretName: cowlab-production-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prowlarr-cert
+  namespace: prowlarr
+spec:
+  secretName: cowlab-production-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.cowlab.org"
+  dnsNames:
+  - "cowlab.org"
+  - "*.cowlab.org"

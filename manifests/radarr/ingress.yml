@@ -14,5 +14,20 @@ spec:
       services:
         - name: radarr
           port: 7878
-  # tls:
-  #   secretName: cowlab-production-tls
+  tls:
+    secretName: cowlab-production-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: radarr-cert
+  namespace: radarr
+spec:
+  secretName: cowlab-production-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: "*.cowlab.org"
+  dnsNames:
+  - "cowlab.org"
+  - "*.cowlab.org"
