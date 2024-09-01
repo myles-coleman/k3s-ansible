@@ -14,20 +14,5 @@ spec:
     services:
     - name: grafana
       port: 3000
-  tls:
-    secretName: cowlab-production-tls
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: grafana-cert
-  namespace: grafana
-spec:
-  secretName: cowlab-production-tls
-  issuerRef:
-    name: letsencrypt-production
-    kind: ClusterIssuer
-  commonName: "*.cowlab.org"
-  dnsNames:
-  - "cowlab.org"
-  - "*.cowlab.org"
+  # tls:
+  #   secretName: cowlab-production-tls

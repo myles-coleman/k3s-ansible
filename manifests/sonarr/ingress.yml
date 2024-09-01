@@ -14,20 +14,5 @@ spec:
       services:
         - name: sonarr
           port: 8989
-  tls:
-    secretName: cowlab-production-tls
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: sonarr-cert
-  namespace: sonarr
-spec:
-  secretName: cowlab-production-tls
-  issuerRef:
-    name: letsencrypt-production
-    kind: ClusterIssuer
-  commonName: "*.cowlab.org"
-  dnsNames:
-  - "cowlab.org"
-  - "*.cowlab.org"
+  # tls:
+  #   secretName: cowlab-production-tls
