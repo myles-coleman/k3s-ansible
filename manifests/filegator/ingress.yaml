@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: filegator
+  namespace: filegator
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`filegator.cowlab.org`)
+      kind: Rule
+      services:
+        - name: filegator
+          port: 8080
