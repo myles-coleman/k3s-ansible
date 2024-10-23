@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: discord-bot
-          image: beebecomebigbee/discord-bot:main
+          image: beebecomebigbee/discord-bot:latest
           imagePullPolicy: Always
           env:
             - name: OPEN_AI_API_KEY
