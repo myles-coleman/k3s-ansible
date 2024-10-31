@@ -33,15 +33,8 @@
 - debug:
     var: argocd_password.stdout
 
-- name: Find all application directories in manifests
-  find:
-    paths: "{{ playbook_dir }}/manifests"
-    file_type: directory
-    recurse: no
-  register: app_dirs
-
-- name: Create ArgoCD applications for each directory
+- name: Apply ApplicationSet 
   kubernetes.core.k8s:
     state: present
-    definition: "{{ lookup('template', 'application.j2') }}"
-  loop: "{{ app_dirs.files }}"
+    namespace: argocd
+    definition: "{{ lookup('template', 'applicationset.j2') }}"
