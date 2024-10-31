@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filegator
+  namespace: filegator
+  labels:
+    app: filegator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filegator
+  template:
+    metadata:
+      labels:
+        app: filegator
+    spec:
+      containers:
+        - name: filegator
+          image: filegator/filegator:v7.10.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: FG_STORAGE_PATH
+              value: /shared          # Path inside the container
+            - name: FG_ADMIN_USERNAME
+              value: admin             # Replace as needed
+            - name: FG_ADMIN_PASSWORD
+              value: admin123          # Replace with a secure password
+            - name: FG_SECRET_KEY
+              value: your_secret_key   # Replace with a secure key
+          volumeMounts:
+            - name: shared-storage
+              mountPath: /shared       # Mount path inside the container
+      volumes:
+        - name: shared-storage
+          persistentVolumeClaim:
+            claimName: filegator-pvc
