@@ -1,34 +1,27 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: apps-of-apps
+  name: bootstrap
 spec:
   generators:
     - git:
-        repoURL: 'https://github.com/myles-coleman/k3s-ansible'
-        revision: main
+        repoURL: 'https://github.com/myles-coleman/k3s-ansible.git'
+        revision: HEAD
         directories:
           - path: 'manifests/*'
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{ "{{" }}path.basename{{ "}}" }}'
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/myles-coleman/k3s-ansible'
-        targetRevision: main
-        path: 'manifests/{{path.basename}}'
+        repoURL: 'https://github.com/myles-coleman/k3s-ansible.git'
+        targetRevision: HEAD
+        path: "manifests/{{ "{{" }}path.basename{{ "}}" }}"
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: '{{path.basename}}'
+        namespace: '{{ "{{" }}path.basename{{ "}}" }}'
       syncPolicy:
         automated:
-          allowEmpty: true
           prune: true
           selfHeal: true
-        retry:
-          backoff:
-            duration: 30s
-            factor: 2
-            maxDuration: 2m
-          limit: 5
