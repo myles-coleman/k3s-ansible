@@ -37,4 +37,4 @@
   kubernetes.core.k8s:
     state: present
     namespace: argocd
-    definition: "{{ lookup('template', 'applicationset.j2') }}"
+    definition: "{{ lookup('template', 'applicationSet.j2') }}"
