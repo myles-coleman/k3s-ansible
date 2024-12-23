@@ -12,6 +12,6 @@ resources:
 - sonarr
 - radarr
 - readarr
-# - lidarr
+- lidarr
 # - prowlarr
 # - nginxproxymanager
