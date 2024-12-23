@@ -1,0 +1,48 @@
+---
+- name: Taint pi-agent1
+  ansible.builtin.command: >
+    kubectl taint nodes pi-agent1 dedicated=raspberry-pi:NoSchedule --overwrite
+  register: taint_agent1
+  changed_when: "'already has' not in taint_agent1.stderr"
+
+- name: Taint pi-agent2
+  ansible.builtin.command: >
+    kubectl taint nodes pi-agent2 dedicated=raspberry-pi:NoSchedule --overwrite
+  register: taint_agent2
+  changed_when: "'already has' not in taint_agent2.stderr"
+
+- name: Taint pi-server
+  ansible.builtin.command: >
+    kubectl taint nodes pi-server dedicated=raspberry-pi:NoSchedule --overwrite
+  register: taint_server
+  changed_when: "'already has' not in taint_server.stderr"
+
+- name: Taint media
+  ansible.builtin.command: >
+    kubectl taint nodes media dedicated=ubuntu:NoSchedule --overwrite
+  register: taint_media
+  changed_when: "'already has' not in taint_media.stderr"
+
+- name: Label pi-agent1
+  ansible.builtin.command: >
+    kubectl label node pi-agent1 node-type=raspberry-pi --overwrite
+  register: label_agent1
+  changed_when: "'already has' not in label_agent1.stderr"
+
+- name: Label pi-agent2
+  ansible.builtin.command: >
+    kubectl label node pi-agent2 node-type=raspberry-pi --overwrite
+  register: label_agent2
+  changed_when: "'already has' not in label_agent2.stderr"
+
+- name: Label pi-server
+  ansible.builtin.command: >
+    kubectl label node pi-server node-type=raspberry-pi --overwrite
+  register: label_server
+  changed_when: "'already has' not in label_server.stderr"
+
+- name: Label media
+  ansible.builtin.command: >
+    kubectl label node media node-type=ubuntu --overwrite
+  register: label_media
+  changed_when: "'already has' not in label_media.stderr"
