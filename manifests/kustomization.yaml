@@ -8,3 +8,10 @@ resources:
 - monitoring
 - nextcloud
 - vaultwarden
+- jellyfin
+- sonarr
+- radarr
+# - lidarr
+# - prowlarr
+# - readarr
+# - nginxproxymanager
