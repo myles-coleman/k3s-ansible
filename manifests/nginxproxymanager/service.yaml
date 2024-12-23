@@ -16,4 +16,3 @@ spec:
   - name: admin
     port: 81
     targetPort: 81
-  type: LoadBalancer
