@@ -14,3 +14,5 @@ spec:
       services:
         - name: nginxproxymanager
           port: 80
+  tls:
+    certResolver: default
