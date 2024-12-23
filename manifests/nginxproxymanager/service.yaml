@@ -7,12 +7,6 @@ spec:
   selector:
     app: nginxproxymanager
   ports:
-  - name: http
-    port: 80
-    targetPort: 80
-  - name: https
-    port: 443
-    targetPort: 443
   - name: admin
     port: 81
     targetPort: 81

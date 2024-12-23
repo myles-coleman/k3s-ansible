@@ -15,4 +15,4 @@ spec:
         - name: nginxproxymanager
           port: 81
   tls:
-      passthrough: true
+    certResolver: default
