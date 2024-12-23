@@ -83,3 +83,52 @@ resources:
 - speedtestexporter-deployment.yaml
 - speedtestexporter-service.yaml
 - speedtestexporter-serviceMonitor.yaml
+
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: node-type
+                      operator: In
+                      values:
+                        - raspberry-pi
+    target:
+      kind: Deployment
+
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: node-type
+                      operator: In
+                      values:
+                        - raspberry-pi
+    target:
+      kind: DaemonSet
+
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          nodeAffinity:
+            preferredDuringSchedulingIgnoredDuringExecution:
+              - weight: 1
+                preference:
+                  matchExpressions:
+                    - key: node-type
+                      operator: In
+                      values:
+                        - raspberry-pi
+    target:
+      kind: StatefulSet

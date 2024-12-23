@@ -7,3 +7,19 @@ resources:
   - deployment.yml
   - service.yml
   - ingress.yml
+
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node-type
+                      operator: In
+                      values:
+                        - ubuntu
+    target:
+      kind: Deployment

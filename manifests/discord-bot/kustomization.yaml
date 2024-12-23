@@ -4,3 +4,19 @@ resources:
   - namespace.yaml
   - deployment.yaml
   - secret.yaml
+
+patches:
+  - patch: |-
+      - op: add
+        path: /spec/template/spec/affinity
+        value:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: node-type
+                      operator: In
+                      values:
+                        - raspberry-pi
+    target:
+      kind: Deployment
