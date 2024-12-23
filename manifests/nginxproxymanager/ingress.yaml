@@ -13,4 +13,4 @@ spec:
       kind: Rule
       services:
         - name: nginxproxymanager
-          port: 81
+          port: 80
