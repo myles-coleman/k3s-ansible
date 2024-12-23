@@ -11,7 +11,7 @@ resources:
 - jellyfin
 - sonarr
 - radarr
+- readarr
 # - lidarr
 # - prowlarr
-# - readarr
 # - nginxproxymanager
