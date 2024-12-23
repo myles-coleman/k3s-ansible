@@ -3,7 +3,7 @@ kind: IngressRoute
 metadata:
   name: nginxproxymanager
   namespace: nginxproxymanager
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
@@ -13,4 +13,4 @@ spec:
       kind: Rule
       services:
         - name: nginxproxymanager
-          port: 81
+          port: 80
