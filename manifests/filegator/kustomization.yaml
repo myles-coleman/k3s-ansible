@@ -20,6 +20,6 @@ patches:
                     - key: node-type
                       operator: In
                       values:
-                        - raspberry-pi
+                        - ubuntu
     target:
       kind: Deployment
