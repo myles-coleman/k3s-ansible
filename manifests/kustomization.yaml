@@ -14,6 +14,6 @@ resources:
 - readarr
 - lidarr
 - prowlarr
-# - nginxproxymanager
+- nginxproxymanager
 # - qbittorrent
 # - wireguard
