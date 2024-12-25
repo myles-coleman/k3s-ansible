@@ -8,6 +8,18 @@ resources:
   - service.yml
   - ingress.yml
 
+namespace: homer
+
+configMapGenerator:
+  - name: homer-config
+    options:
+      disableNameSuffixHash: true
+      annotations:
+        argocd.argoproj.io/sync-options: Replace=true
+    behavior: create
+    files:
+     - config.yml=config.yml
+
 patches:
   - patch: |-
       - op: add
