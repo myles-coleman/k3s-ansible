@@ -136,3 +136,8 @@ services:
         keywords: "Nginxproxymanager"
         url: "https://nginxproxymanager.cowlab.org/"
         target: "_blank"
+      - name: "Vault"
+        logo: "assets/tools/vault.png"
+        keywords: "Vault"
+        url: "https://vault.cowlab.org/"
+        target: "_blank"
