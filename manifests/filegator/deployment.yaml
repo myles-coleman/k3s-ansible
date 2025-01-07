@@ -22,7 +22,7 @@ spec:
             - containerPort: 8080
           env:
             - name: FG_STORAGE_PATH
-              value: /shared          # Path inside the container
+              value: /home/bee         # Path inside the container
             - name: FG_ADMIN_USERNAME
               value: admin             # Replace as needed
             - name: FG_ADMIN_PASSWORD
@@ -31,7 +31,7 @@ spec:
               value: your_secret_key   # Replace with a secure key
           volumeMounts:
             - name: shared-storage
-              mountPath: /shared       # Mount path inside the container
+              mountPath: /home/bee      # Mount path inside the container
       volumes:
         - name: shared-storage
           persistentVolumeClaim:
