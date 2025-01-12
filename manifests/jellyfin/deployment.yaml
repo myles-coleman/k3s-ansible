@@ -28,6 +28,7 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /config
+          subPath: docker-config/jellyfin/config
       volumes:
       - name: config-volume
         persistentVolumeClaim:

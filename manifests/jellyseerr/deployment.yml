@@ -26,6 +26,7 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /app/config
+          subPath: docker-config/jellyseerr/config
       volumes:
       - name: config-volume
         persistentVolumeClaim:

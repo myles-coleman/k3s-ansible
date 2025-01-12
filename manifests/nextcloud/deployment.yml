@@ -26,8 +26,10 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /config
+          subPath: docker-config/nextcloud/appdata
         - name: data-volume
           mountPath: /data
+          subPath: docker-config/nextcloud/data
       volumes:
       - name: config-volume
         persistentVolumeClaim:

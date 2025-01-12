@@ -76,7 +76,7 @@
   vars_files:
     - token.yml
   roles:
-    # - role: traefik
-    # - role: cert-manager
-    # - role: argocd
+    - role: traefik
+    - role: cert-manager
+    - role: argocd
     - role: labels

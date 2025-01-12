@@ -17,8 +17,8 @@
   register: label_server
   changed_when: "'already has' not in label_server.stderr"
 
-- name: Label media
+- name: Label homelab
   ansible.builtin.command: >
-    kubectl label node media node-type=ubuntu --overwrite
-  register: label_media
-  changed_when: "'already has' not in label_media.stderr"
+    kubectl label node homelab node-type=ubuntu --overwrite
+  register: label_homelab
+  changed_when: "'already has' not in label_homelab.stderr"
