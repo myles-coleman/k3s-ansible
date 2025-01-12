@@ -28,6 +28,7 @@ spec:
         volumeMounts:
         - name: assets-volume
           mountPath: /www/assets
+          subPath: docker-config/homer/assets
         - name: homer-config
           mountPath: /www/assets/config.yml
           subPath: config.yml

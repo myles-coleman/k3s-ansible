@@ -1,0 +1,13 @@
+controller:
+  runOnControlPlane: true
+  name: csi-smb-controller
+  replicas: 1
+  livenessProbe:
+    healthPort: 29642
+  resources:
+    smb:
+      limits:
+        memory: 200Mi
+      requests:
+        cpu: 10m
+        memory: 20Mi
