@@ -28,8 +28,16 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /config
-          subPath: docker-config/jellyfin/config
+          subPath: jellyfin/config
+        - name: data-volume
+          mountPath: /data
+          subPath: media
       volumes:
       - name: config-volume
-        persistentVolumeClaim:
-          claimName: jellyfin-config-pvc
+        hostPath:
+          path: /mnt/md0/docker-config
+          type: Directory
+      - name: data-volume
+        hostPath:
+          path: /mnt/md0/data
+          type: Directory
