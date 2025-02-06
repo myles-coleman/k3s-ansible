@@ -15,7 +15,6 @@ resources:
 - lidarr
 - prowlarr
 - nginxproxymanager
-- csi-driver-smb
 # - qbittorrent
 # - wireguard
 # - vault
