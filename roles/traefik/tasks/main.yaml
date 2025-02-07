@@ -29,6 +29,7 @@
     release_namespace: traefik
     values: "{{ lookup('file', '../vars/values.yaml') | from_yaml }}"
     state: present
+    chart_version: v33.2.1
 
 - name: Get all services
   kubernetes.core.k8s_info:
