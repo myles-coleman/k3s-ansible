@@ -2,11 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 - discord-bot
-- filegator
 - homer
 - jellyseerr
 - monitoring
-- nextcloud
+# - nextcloud
 - vaultwarden
 - jellyfin
 - sonarr
@@ -14,7 +13,7 @@ resources:
 - readarr
 - lidarr
 - prowlarr
-- nginxproxymanager
+# - nginxproxymanager
 # - qbittorrent
 # - wireguard
 # - vault

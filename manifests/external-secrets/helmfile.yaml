@@ -1,0 +1,11 @@
+repositories:
+- name: external-secrets
+  url: https://charts.external-secrets.io
+
+releases:
+- name: external-secrets-operator
+  namespace: external-secrets
+  chart: external-secrets/external-secrets
+  version: v0.12.1
+  values:
+    - values.yaml
