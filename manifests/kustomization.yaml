@@ -13,6 +13,7 @@ resources:
 - readarr
 - lidarr
 - prowlarr
+- longhorn
 # - nginxproxymanager
 # - qbittorrent
 # - wireguard
