@@ -10,7 +10,6 @@ spec:
     - websecure
   routes:
     - match: HostSNI(`pikvm.cowlab.org`)
-      kind: Rule
       services:
         - name: pikvm-external-ssl
           port: 443

@@ -79,4 +79,3 @@
     - role: traefik
     - role: cert-manager
     - role: argocd
-    - role: labels
