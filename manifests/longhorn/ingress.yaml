@@ -12,5 +12,5 @@ spec:
     - match: Host(`longhorn.cowlab.org`)
       kind: Rule
       services:
-        - name: longhorn-system
+        - name: longhorn-frontend
           port: 80
