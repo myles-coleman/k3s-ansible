@@ -13,4 +13,4 @@ spec:
       kind: Rule
       services:
         - name: longhorn-system
-          port: 8000
+          port: 80
