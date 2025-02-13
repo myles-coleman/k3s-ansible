@@ -1,6 +1,9 @@
 ingress:
   enabled: false
 
+preUpgradeChecker:
+  jobEnabled: false
+
 metrics:
   serviceMonitor:
     enabled: true
