@@ -19,3 +19,4 @@ resources:
 # - wireguard
 # - vault
 # - external-secrets
+- pihole

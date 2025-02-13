@@ -1,0 +1,11 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: pihole-rewrite
+  namespace: pihole
+spec:
+  replacePathRegex:
+    # This regex says "match everything after /"
+    regex: "^/(.*)"
+    # This replacement inserts 'admin/' after the slash
+    replacement: "/admin/$1"
