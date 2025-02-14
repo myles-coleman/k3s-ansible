@@ -14,5 +14,3 @@ spec:
       services:
         - name: homer
           port: 8080
-  # tls:
-  #   secretName: cowlab-production-tls

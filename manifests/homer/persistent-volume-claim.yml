@@ -4,10 +4,9 @@ metadata:
   name: homer-assets-pvc
   namespace: homer
 spec:
+  storageClassName: longhorn
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
-  volumeName: homer-assets-pv
-  storageClassName: ""
+      storage: 5Mi #5Mb

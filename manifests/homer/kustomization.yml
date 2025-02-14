@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - namespace.yml
   - persistent-volume-claim.yml
-  - persistent-volume.yml
   - deployment.yml
   - service.yml
   - ingress.yml
@@ -19,20 +18,3 @@ configMapGenerator:
     behavior: create
     files:
      - config.yml=config.yml
-
-patches:
-  - patch: |-
-      - op: add
-        path: /spec/template/spec/affinity
-        value:
-          nodeAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-              - weight: 1
-                preference:
-                  matchExpressions:
-                    - key: node-type
-                      operator: In
-                      values:
-                        - raspberry-pi
-    target:
-      kind: Deployment

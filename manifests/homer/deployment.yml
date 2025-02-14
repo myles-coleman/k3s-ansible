@@ -4,7 +4,7 @@ metadata:
   name: homer
   namespace: homer
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: homer
@@ -34,8 +34,8 @@ spec:
           subPath: config.yml
       volumes:
       - name: assets-volume
-        hostPath:
-          path: /mnt/md0/docker-config
+        persistentVolumeClaim:
+          claimName: homer-assets-pvc
       - name: homer-config
         configMap:
           name: homer-config 
