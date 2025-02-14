@@ -32,6 +32,9 @@ spec:
         - name: homer-config
           mountPath: /www/assets/config.yml
           subPath: config.yml
+        - name: icons-volume
+          mountPath: /www/assets/icons
+          subPath: icons
       volumes:
       - name: assets-volume
         persistentVolumeClaim:
@@ -39,3 +42,6 @@ spec:
       - name: homer-config
         configMap:
           name: homer-config 
+      - name: icons-volume
+        configMap:
+          name: homer-icons
