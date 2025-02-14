@@ -26,18 +26,12 @@ spec:
             memory: "256Mi"
             cpu: "250m"
         volumeMounts:
-        - name: assets-volume
-          mountPath: /www/assets
-          subPath: homer/assets
         - name: homer-config
           mountPath: /www/assets/config.yml
           subPath: config.yml
         - name: icons-volume
           mountPath: /www/assets/icons
       volumes:
-      - name: assets-volume
-        persistentVolumeClaim:
-          claimName: homer-assets-pvc
       - name: homer-config
         configMap:
           name: homer-config 
