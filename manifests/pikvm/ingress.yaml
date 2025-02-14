@@ -16,5 +16,7 @@ spec:
           port: 443
           scheme: https
           serversTransport: "pikvm-transport@kubernetescrd"
+          passHostHeader: false
+          hostHeader: "localhost"
   tls:
     certResolver: "letsencrypt"
