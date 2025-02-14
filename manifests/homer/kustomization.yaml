@@ -22,6 +22,8 @@ configMapGenerator:
     namespace: homer
     options:
       disableNameSuffixHash: true
+      annotations:
+        argocd.argoproj.io/sync-options: Replace=true
     files:
       - argocd.png=icons/argocd.png
       - grafana.png=icons/grafana.png
