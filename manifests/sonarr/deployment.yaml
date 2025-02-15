@@ -29,10 +29,9 @@ spec:
             memory: "256Mi"
             cpu: "250m"
         volumeMounts:
-        - name: config-volume
-          mountPath: /config
-          subPath: docker-config/sonarr/config
+        - name: data-volume
+          mountPath: /data
       volumes:
-      - name: config-volume
+      - name: data-volume
         persistentVolumeClaim:
-          claimName: sonarr-config-pvc
+          claimName: sonarr-data
