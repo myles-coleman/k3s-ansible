@@ -28,7 +28,7 @@ spec:
           value: "debug"
         volumeMounts:
         - name: config-volume
-          mountPath: /config
+          mountPath: /app/config
       volumes:
       - name: config-volume
         persistentVolumeClaim:
