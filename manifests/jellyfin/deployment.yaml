@@ -26,12 +26,12 @@ spec:
         volumeMounts:
         - name: data-volume
           mountPath: /data
-        - name: config-volume
-          mountPath: /config
+        # - name: config-volume
+        #   mountPath: /config
       volumes:
       - name: data-volume
         persistentVolumeClaim:
           claimName: jellyfin-data
-      - name: config-volume
-        persistentVolumeClaim:
-          claimName: jellyfin-config
+      # - name: config-volume
+      #   persistentVolumeClaim:
+      #     claimName: jellyfin-config
