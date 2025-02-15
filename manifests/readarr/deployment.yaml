@@ -29,10 +29,14 @@ spec:
         ports:
         - containerPort: 8787
         volumeMounts:
+        - name: data-volume
+          mountPath: /data
         - name: config-volume
           mountPath: /config
-          subPath: docker-config/readarr/config
       volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: readarr-data
       - name: config-volume
         persistentVolumeClaim:
-          claimName: readarr-config-pvc
+          claimName: readarr-config
