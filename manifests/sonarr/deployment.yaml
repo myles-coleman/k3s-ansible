@@ -39,4 +39,4 @@ spec:
           claimName: sonarr-data
       - name: config-volume
         persistentVolumeClaim:
-          claimName: sonarr-config-pvc
+          claimName: sonarr-config
