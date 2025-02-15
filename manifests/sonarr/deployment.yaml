@@ -31,7 +31,12 @@ spec:
         volumeMounts:
         - name: data-volume
           mountPath: /data
+        - name: config-volume
+          mountPath: /config
       volumes:
       - name: data-volume
         persistentVolumeClaim:
           claimName: sonarr-data
+      - name: config-volume
+        persistentVolumeClaim:
+          claimName: sonarr-config-pvc
