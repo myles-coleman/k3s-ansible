@@ -30,8 +30,7 @@ spec:
         volumeMounts:
         - name: data-volume
           mountPath: /data
-          subPath: docker-config/vaultwarden/data
       volumes:
       - name: data-volume
         persistentVolumeClaim:
-          claimName: vaultwarden-data-pvc
+          claimName: vaultwarden-data

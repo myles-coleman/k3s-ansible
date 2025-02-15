@@ -14,5 +14,3 @@ spec:
       services:
         - name: vaultwarden
           port: 80
-  # tls:
-  #   secretName: cowlab-production-tls
