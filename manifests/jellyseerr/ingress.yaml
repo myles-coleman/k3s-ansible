@@ -14,5 +14,3 @@ spec:
       services:
         - name: jellyseerr
           port: 5055
-  # tls:
-  #   secretName: cowlab-production-tls
