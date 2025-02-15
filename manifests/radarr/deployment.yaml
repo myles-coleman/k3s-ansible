@@ -29,10 +29,14 @@ spec:
         ports:
         - containerPort: 7878
         volumeMounts:
+        - name: data-volume
+          mountPath: /data
         - name: config-volume
           mountPath: /config
-          subPath: docker-config/radarr/config
       volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: radarr-data
       - name: config-volume
         persistentVolumeClaim:
-          claimName: radarr-config-pvc
+          claimName: radarr-config
