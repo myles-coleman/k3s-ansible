@@ -127,7 +127,7 @@ services:
         keywords: "Vault"
         url: "https://vault.cowlab.org/"
         target: "_blank"
-      - name: "Vault"
+      - name: "Longhorn"
         logo: "assets/icons/longhorn.png"
         keywords: "Longhorn"
         url: "https://longhorn.cowlab.org/"
