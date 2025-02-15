@@ -14,5 +14,3 @@ spec:
       services:
         - name: nextcloud
           port: 80
-  # tls:
-  #   secretName: cowlab-production-tls

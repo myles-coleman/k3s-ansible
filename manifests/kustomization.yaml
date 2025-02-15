@@ -15,7 +15,7 @@ resources:
 - pihole
 - pikvm
 - monitoring
-# - nextcloud
+- nextcloud
 # - qbittorrent
 # - wireguard
 # - vault

@@ -16,24 +16,24 @@ spec:
       containers:
       - name: nextcloud
         image: lscr.io/linuxserver/nextcloud:latest
-        env:
-        - name: UMASK
-          value: "002"
-        - name: TZ
-          value: "America/New_York"
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
         volumeMounts:
-        - name: config-volume
-          mountPath: /config
-          subPath: docker-config/nextcloud/appdata
         - name: data-volume
           mountPath: /data
-          subPath: docker-config/nextcloud/data
+        - name: config-volume
+          mountPath: /appdata
       volumes:
-      - name: config-volume
-        persistentVolumeClaim:
-          claimName: nextcloud-config-pvc
       - name: data-volume
         persistentVolumeClaim:
-          claimName: nextcloud-data-pvc
+          claimName: nextcloud-data
+      - name: config-volume
+        persistentVolumeClaim:
+          claimName: nextcloud-config
