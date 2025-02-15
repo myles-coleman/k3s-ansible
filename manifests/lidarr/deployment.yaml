@@ -29,10 +29,14 @@ spec:
         ports:
         - containerPort: 8686
         volumeMounts:
+        - name: data-volume
+          mountPath: /data
         - name: config-volume
           mountPath: /config
-          subPath: docker-config/lidarr/config
       volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: lidarr-data
       - name: config-volume
         persistentVolumeClaim:
-          claimName: lidarr-config-pvc
+          claimName: lidarr-config
