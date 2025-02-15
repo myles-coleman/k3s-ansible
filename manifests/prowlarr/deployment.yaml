@@ -29,10 +29,14 @@ spec:
         ports:
         - containerPort: 9696
         volumeMounts:
+        - name: data-volume
+          mountPath: /data
         - name: config-volume
           mountPath: /config
-          subPath: docker-config/prowlarr/config
       volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: prowlarr-data
       - name: config-volume
         persistentVolumeClaim:
-          claimName: prowlarr-config-pvc
+          claimName: prowlarr-config
