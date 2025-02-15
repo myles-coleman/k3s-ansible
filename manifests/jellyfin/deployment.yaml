@@ -15,29 +15,23 @@ spec:
     spec:
       containers:
       - name: jellyfin
-        image: jellyfin/jellyfin
-        env:
-        - name: PUID
-          value: "1000"
-        - name: PGID
-          value: "1000"
-        - name: TZ
-          value: "America/New_York"
-        ports:
-        - containerPort: 8096
+        image: jellyfin/jellyfin:latest
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
         volumeMounts:
-        - name: config-volume
-          mountPath: /config
-          subPath: jellyfin/config
         - name: data-volume
           mountPath: /data
-          subPath: media
+        - name: config-volume
+          mountPath: /config
       volumes:
-      - name: config-volume
-        hostPath:
-          path: /mnt/md0/docker-config
-          type: Directory
       - name: data-volume
-        hostPath:
-          path: /mnt/md0/data
-          type: Directory
+        persistentVolumeClaim:
+          claimName: jellyfin-data
+      - name: config-volume
+        persistentVolumeClaim:
+          claimName: jellyfin-config
