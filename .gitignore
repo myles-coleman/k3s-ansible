@@ -3,3 +3,7 @@
 ansible.cfg
 kubeconfig
 token.yml
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
