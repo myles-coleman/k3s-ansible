@@ -16,7 +16,8 @@ resources:
 - pikvm
 - monitoring
 - nextcloud
+- vault
+# - dex
 # - qbittorrent
 # - wireguard
-# - vault
 # - external-secrets
