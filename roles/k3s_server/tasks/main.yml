@@ -140,39 +140,6 @@
   #                     would be undefined. This will not be the case during playbook execution.
   # noqa jinja[invalid]
 
-- name: Rename the cluster in kubeconfig to 'homelab'
-  command: >-
-    k3s kubectl config rename-cluster default homelab
-      --kubeconfig {{ ansible_user_dir }}/.kube/config
-  changed_when: true
-
-- name: Rename the context in kubeconfig to 'homelab'
-  command: >-
-    k3s kubectl config rename-context default homelab
-      --kubeconfig {{ ansible_user_dir }}/.kube/config
-  changed_when: true
-
-- name: Rename the user in kubeconfig to 'admin'
-  command: >-
-    k3s kubectl config set-credentials admin
-      --client-certificate=/var/lib/rancher/k3s/server/tls/client-admin.crt
-      --client-key=/var/lib/rancher/k3s/server/tls/client-admin.key
-      --kubeconfig {{ ansible_user_dir }}/.kube/config
-  changed_when: true
-
-- name: Update the context to use the new user name
-  command: >-
-    k3s kubectl config set-context homelab
-      --user=admin
-      --kubeconfig {{ ansible_user_dir }}/.kube/config
-  changed_when: true
-
-- name: Set the new context as current
-  command: >-
-    k3s kubectl config use-context homelab
-      --kubeconfig {{ ansible_user_dir }}/.kube/config
-  changed_when: true
-
 - name: Create kubectl symlink
   file:
     src: /usr/local/bin/k3s
