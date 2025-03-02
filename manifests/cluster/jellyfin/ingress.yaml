@@ -3,14 +3,14 @@ kind: IngressRoute
 metadata:
   name: jellyfin
   namespace: jellyfin
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`jellyfin.cowlab.org`)
+    - match: Host(`jellyfin.cowlab.org`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: jellyfin
+        - name: jellyfin-external
           port: 8096

@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jellyfin
+  name: jellyfin-external
   namespace: jellyfin
 spec:
-  selector:
-    app: jellyfin
+  type: ExternalName
+  externalName: "10.0.0.150"
   ports:
-    - name: http
-      protocol: TCP
-      port: 8096
+    - port: 8096
       targetPort: 8096
