@@ -16,3 +16,4 @@ resources:
 - pikvm-app.yaml
 - monitoring-app.yaml
 - nextcloud-app.yaml
+- vault-app.yaml
