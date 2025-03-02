@@ -46,12 +46,12 @@
     state: present
     definition: "{{ lookup('template', 'staging-cert.j2') }}"
 
-# - name: Apply Production ClusterIssuer
-#   kubernetes.core.k8s:
-#     state: present
-#     definition: "{{ lookup('template', 'letsencrypt-production.j2') }}"
+- name: Apply Production ClusterIssuer
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'letsencrypt-production.j2') }}"
 
-# - name: Apply Production Certificate
-#   kubernetes.core.k8s:
-#     state: present
-#     definition: "{{ lookup('template', 'prod-cert.j2') }}"
+- name: Apply Production Certificate
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', 'prod-cert.j2') }}"
