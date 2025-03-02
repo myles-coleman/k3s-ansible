@@ -4,10 +4,6 @@ resource "kubernetes_namespace" "argocd" {
   }
 }
 
-output "argocd_namespace" {
-  value = kubernetes_namespace.argocd.id
-}
-
 resource "random_password" "client_secret" {
   length  = 20
   special = false
@@ -37,9 +33,48 @@ repoServer:
   metrics:
     enabled: true
 
+dex:
+  metrics:
+    enabled: true
+  env:
+    - name: ARGOCD_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: argocd-secret
+          key: oidc.sso.clientSecret
+
 configs:
+  secret:
+    extra:
+      oidc.sso.clientID: argocd
+      oidc.sso.clientSecret: ${random_password.client_secret.result}
+
+  cm:
+    exec.enabled: true
+    admin.enabled: false
+
+    url: ${var.argocd_url}
+    oidc.config: |
+      name: Dex
+      issuer: ${var.dex_url}
+      clientID: argocd
+      clientSecret: $oidc.sso.clientSecret
+      requestedScopes: ["openid", "profile", "email", "groups"]
+
+      allowedAudiences:
+      - argocd
+      - kubernetes
+
+  rbac:
+    policy.csv: |
+      g, ${var.github_username}, role:admin
+    policy.default: role:readonly
+    scopes: '[groups, email]'
+
   params:
     "server.insecure": true
+
+  
 EOF
   ]
 }
