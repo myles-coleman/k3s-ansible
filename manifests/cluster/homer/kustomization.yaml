@@ -22,24 +22,24 @@ configMapGenerator:
     options:
       disableNameSuffixHash: true
       annotations:
-        argocd.argoproj.io/sync-options: ServerSideApply=true
+        argocd.argoproj.io/sync-options: ServerSideApply=true,Replace=true
     files:
-      - argocd.png=icons/argocd.png
-      - grafana.png=icons/grafana.png
       - jellyfin.png=icons/jellyfin.png
       - jellyseerr.png=icons/jellyseerr.png
-      - kubernetes.png=icons/kubernetes.png
-      - lidarr.png=icons/lidarr.png
-      - nextcloud.png=icons/nextcloud.png
-      - pi-hole.png=icons/pi-hole.png
-      - pikvm.png=icons/pikvm.png
-      - prowlarr.png=icons/prowlarr.png
-      - qbittorrent.png=icons/qbittorrent.png
+      - sonarr.png=icons/sonarr.png
       - radarr.png=icons/radarr.png
       - readarr.png=icons/readarr.png
-      - sonarr.png=icons/sonarr.png
+      - lidarr.png=icons/lidarr.png
+      - prowlarr.png=icons/prowlarr.png
+      - nextcloud.png=icons/nextcloud.png
+      - vaultwarden.png=icons/vaultwarden.png
+      - qbittorrent.png=icons/qbittorrent.png
+      - pi-hole.png=icons/pi-hole.png
+      - pikvm.png=icons/pikvm.png
+      - grafana.png=icons/grafana.png
+      - argocd.png=icons/argocd.png
       - traefik.png=icons/traefik.png
       - vault.png=icons/vault.png
-      - vaultwarden.png=icons/vaultwarden.png
-      - favicon.ico=icons/favicon.ico
+      - longhorn.png=icons/kubernetes.png
       - smallcow.png=icons/smallcow.png
+      - favicon.ico=icons/favicon.ico
