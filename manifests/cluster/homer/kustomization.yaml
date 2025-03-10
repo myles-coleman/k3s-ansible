@@ -22,22 +22,22 @@ configMapGenerator:
     options:
       disableNameSuffixHash: true
     files:
-      - argocd.jpg=icons/argocd.jpg
-      - grafana.jpg=icons/grafana.jpg
-      - jellyfin.jpg=icons/jellyfin.jpg
-      - jellyseerr.jpg=icons/jellyseerr.jpg
-      - kubernetes.jpg=icons/kubernetes.jpg
-      - lidarr.jpg=icons/lidarr.jpg
-      - nextcloud.jpg=icons/nextcloud.jpg
-      - pi-hole.jpg=icons/pi-hole.jpg
-      - pikvm.jpg=icons/pikvm.jpg
-      - prowlarr.jpg=icons/prowlarr.jpg
-      - qbittorrent.jpg=icons/qbittorrent.jpg
-      - radarr.jpg=icons/radarr.jpg
-      - readarr.jpg=icons/readarr.jpg
-      - sonarr.jpg=icons/sonarr.jpg
-      - traefik.jpg=icons/traefik.jpg
-      - vault.jpg=icons/vault.jpg
-      - vaultwarden.jpg=icons/vaultwarden.jpg
+      - argocd.png=icons/argocd.png
+      - grafana.png=icons/grafana.png
+      - jellyfin.png=icons/jellyfin.png
+      - jellyseerr.png=icons/jellyseerr.png
+      - kubernetes.png=icons/kubernetes.png
+      - lidarr.png=icons/lidarr.png
+      - nextcloud.png=icons/nextcloud.png
+      - pi-hole.png=icons/pi-hole.png
+      - pikvm.png=icons/pikvm.png
+      - prowlarr.png=icons/prowlarr.png
+      - qbittorrent.png=icons/qbittorrent.png
+      - radarr.png=icons/radarr.png
+      - readarr.png=icons/readarr.png
+      - sonarr.png=icons/sonarr.png
+      - traefik.png=icons/traefik.png
+      - vault.png=icons/vault.png
+      - vaultwarden.png=icons/vaultwarden.png
       - favicon.ico=icons/favicon.ico
-      - smallcow.jpg=icons/smallcow.jpg
+      - smallcow.png=icons/smallcow.png
