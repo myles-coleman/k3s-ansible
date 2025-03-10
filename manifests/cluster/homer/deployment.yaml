@@ -36,5 +36,5 @@ spec:
         configMap:
           name: homer-config 
       - name: icons-volume
-        persistentVolumeClaim:
-          claimName: homer-icons-pvc
+        configMap:
+          name: homer-icons

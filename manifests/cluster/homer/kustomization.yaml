@@ -5,7 +5,6 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  - icons-pvc.yaml
 
 configMapGenerator:
   - name: homer-config
@@ -17,3 +16,28 @@ configMapGenerator:
     behavior: create
     files:
      - config.yml=config.yaml
+
+  - name: homer-icons
+    namespace: homer
+    options:
+      disableNameSuffixHash: true
+    files:
+      - argocd.png=icons/argocd.png
+      - grafana.png=icons/grafana.png
+      - jellyfin.png=icons/jellyfin.png
+      - jellyseerr.png=icons/jellyseerr.png
+      - kubernetes.png=icons/kubernetes.png
+      - lidarr.png=icons/lidarr.png
+      - nextcloud.png=icons/nextcloud.png
+      - pi-hole.png=icons/pi-hole.png
+      - pikvm.png=icons/pikvm.png
+      - prowlarr.png=icons/prowlarr.png
+      - qbittorrent.png=icons/qbittorrent.png
+      - radarr.png=icons/radarr.png
+      - readarr.png=icons/readarr.png
+      - sonarr.png=icons/sonarr.png
+      - traefik.png=icons/traefik.png
+      - vault.png=icons/vault.png
+      - vaultwarden.png=icons/vaultwarden.png
+      - favicon.ico=icons/favicon.ico
+      - smallcow.png=icons/smallcow.png
