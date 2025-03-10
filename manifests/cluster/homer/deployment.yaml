@@ -31,6 +31,9 @@ spec:
           subPath: config.yml
         - name: icons-volume
           mountPath: /www/assets/icons
+        - name: css-volume
+          mountPath: /www/assets/custom.css
+          subPath: custom.css
       volumes:
       - name: homer-config
         configMap:
@@ -38,3 +41,6 @@ spec:
       - name: icons-volume
         configMap:
           name: homer-icons
+      - name: css-volume
+        configMap:
+          name: homer-css

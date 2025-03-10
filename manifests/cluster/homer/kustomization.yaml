@@ -17,6 +17,15 @@ configMapGenerator:
     files:
      - config.yml=config.yaml
 
+  - name: homer-css
+    namespace: homer
+    options:
+      disableNameSuffixHash: true
+      annotations:
+        argocd.argoproj.io/sync-options: Replace=true
+    files:
+      - custom.css=custom.css
+
   - name: homer-icons
     namespace: homer
     options:
