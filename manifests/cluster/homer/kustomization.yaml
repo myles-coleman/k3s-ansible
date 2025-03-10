@@ -43,3 +43,5 @@ configMapGenerator:
       - longhorn.png=icons/kubernetes.png
       - smallcow.png=icons/smallcow.png
       - favicon.ico=icons/favicon.ico
+      - pwa-192x192.png=icons/pwa-192x192.png
+      - pwa-512x512.png=icons/pwa-512x512.png
