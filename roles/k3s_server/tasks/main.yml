@@ -175,3 +175,12 @@
     - "{{ k3s_server_manifests_directories.files }}"
   loop_control:
     label: "{{ item.path }}"
+
+- name: Install Longhorn dependencies for server
+  apt:
+    name:
+      - jq
+      - coreutils
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Raspbian" or (ansible_distribution == "Debian" and ansible_architecture == "armhf" or ansible_architecture == "arm64")
