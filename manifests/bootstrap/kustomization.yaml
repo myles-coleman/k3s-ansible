@@ -17,3 +17,4 @@ resources:
 - monitoring-app.yaml
 - nextcloud-app.yaml
 - vault-app.yaml
+- dex-app.yaml
