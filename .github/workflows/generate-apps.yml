@@ -1,4 +1,4 @@
-name: Generate Argo CD Application Resources
+name: Generate Bootstrap Applications
 
 on:
   push:
@@ -49,9 +49,16 @@ jobs:
             echo "::set-output name=changes::false"
           fi
           
+      - name: Get application name
+        if: steps.git_status.outputs.changes == 'true'
+        id: app_name
+        run: |
+          APP_NAME=$(git diff --name-only --staged manifests/bootstrap/ | grep -o '[^/]*-app.yaml' | sed 's/-app.yaml//' | tr '\n' ' ')
+          echo "name=$APP_NAME" >> $GITHUB_OUTPUT
+
       - name: Commit and push changes
         if: steps.git_status.outputs.changes == 'true'
         run: |
           git add manifests/bootstrap/
-          git commit -m "Auto-generate Argo CD application resources [skip ci]"
+          git commit -m "Auto-generate application: ${{ steps.app_name.outputs.name }}"
           git push
