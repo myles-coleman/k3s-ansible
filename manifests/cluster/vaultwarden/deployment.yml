@@ -23,6 +23,10 @@ spec:
           value: "https://vaultwarden.cowlab.org"
         - name: EMERGENCY_ACCESS_ALLOWED
           value: "true"
+        - name: WEB_VAULT_ENABLED
+          value: "true"
+        - name: SIGNUPS_ALLOWED
+          value: "true"
         resources:
           limits:
             memory: "512Mi"
