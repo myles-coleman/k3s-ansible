@@ -25,6 +25,10 @@ spec:
           value: "true"
         - name: SIGNUPS_ALLOWED
           value: "true"
+        - name: INVITATIONS_ALLOWED
+          value: "true"
+        - name: DISABLE_REGISTRATION_VERIFICATION
+          value: "true"
         resources:
           limits:
             memory: "512Mi"
