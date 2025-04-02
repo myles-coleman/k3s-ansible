@@ -14,16 +14,6 @@ staticClients:
       - http://localhost:8085/auth/callback
     secretEnv: ARGOCD_CLIENT_SECRET
 
-  - id: vault
-    name: Vault
-    redirectURIs:
-      - https://vault.cowlab.org/oidc/callback
-      - https://vault.cowlab.org/ui/vault/auth/dex/oidc/callback
-      # - http://localhost:8000
-      # - http://localhost:18000
-      # - http://localhost:8250/oidc/callback
-    secretEnv: VAULT_CLIENT_SECRET
-
 connectors:
   - config:
       clientID: $GITHUB_CLIENT_ID

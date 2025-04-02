@@ -9,7 +9,6 @@ resources:
 components:
   - secrets/github
   - secrets/argocd
-  - secrets/vault
 
 secretGenerator:
 - name: dex-config
