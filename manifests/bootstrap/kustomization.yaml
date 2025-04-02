@@ -16,4 +16,5 @@ resources:
 - pikvm-app.yaml
 - monitoring-app.yaml
 - nextcloud-app.yaml
+- dex-app.yaml
 - qbittorrent-app.yaml
