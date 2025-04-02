@@ -11,7 +11,3 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-    - name: torrenting
-      protocol: TCP
-      port: 6969
-      targetPort: 6969
