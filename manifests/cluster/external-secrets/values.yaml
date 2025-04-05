@@ -7,8 +7,8 @@ certManager:
     create: true
     issuerRef:
       group: cert-manager.io
-      kind: "ClusterIssuer"
-      name: "letsencrypt-production"
+      kind: "Issuer"
+      name: "external-secrets-ca-issuer"
 
 
 webhook:
@@ -19,8 +19,8 @@ webhook:
 
       issuerRef:
         group: cert-manager.io
-        kind: "ClusterIssuer"
-        name: "letsencrypt-production"
+        kind: "Issuer"
+        name: "external-secrets-ca-issuer"
       duration: "2160h"
       renewBefore: "720h"
   #(Related to a cert invalid webhook issue)
