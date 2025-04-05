@@ -18,3 +18,4 @@ resources:
 - nextcloud-app.yaml
 - dex-app.yaml
 - qbittorrent-app.yaml
+- external-secrets-app.yaml
