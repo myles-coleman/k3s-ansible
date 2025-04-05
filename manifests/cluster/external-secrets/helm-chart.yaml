@@ -1,17 +1,4 @@
 ---
-# Source: external-secrets/templates/cert-controller-serviceaccount.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: external-secrets-cert-controller
-  namespace: external-secrets
-  labels:
-    helm.sh/chart: external-secrets-0.12.1
-    app.kubernetes.io/name: external-secrets-cert-controller
-    app.kubernetes.io/instance: external-secrets-operator
-    app.kubernetes.io/version: "v0.12.1"
-    app.kubernetes.io/managed-by: Helm
----
 # Source: external-secrets/templates/serviceaccount.yaml
 apiVersion: v1
 kind: ServiceAccount
@@ -38,25 +25,12 @@ metadata:
     app.kubernetes.io/version: "v0.12.1"
     app.kubernetes.io/managed-by: Helm
 ---
-# Source: external-secrets/templates/webhook-secret.yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: external-secrets-operator-webhook
-  namespace: external-secrets
-  labels:
-    helm.sh/chart: external-secrets-0.12.1
-    app.kubernetes.io/name: external-secrets-webhook
-    app.kubernetes.io/instance: external-secrets-operator
-    app.kubernetes.io/version: "v0.12.1"
-    app.kubernetes.io/managed-by: Helm
-    external-secrets.io/component: webhook
----
 # Source: external-secrets/templates/crds/acraccesstoken.yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -275,6 +249,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -1008,6 +983,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -2648,6 +2624,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -8422,6 +8399,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -8628,6 +8606,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -9535,6 +9514,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -9612,6 +9592,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -9756,6 +9737,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -9880,6 +9862,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -9979,6 +9962,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -10418,6 +10402,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -16192,6 +16177,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -16412,6 +16398,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -16474,6 +16461,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -17334,6 +17322,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
     controller-gen.kubebuilder.io/version: v0.16.5
   labels:
     external-secrets.io/component: controller
@@ -17491,81 +17480,6 @@ spec:
           name: external-secrets-operator-webhook
           namespace: "external-secrets"
           path: /convert
----
-# Source: external-secrets/templates/cert-controller-rbac.yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: external-secrets-operator-cert-controller
-  labels:
-    helm.sh/chart: external-secrets-0.12.1
-    app.kubernetes.io/name: external-secrets-cert-controller
-    app.kubernetes.io/instance: external-secrets-operator
-    app.kubernetes.io/version: "v0.12.1"
-    app.kubernetes.io/managed-by: Helm
-rules:
-  - apiGroups:
-    - "apiextensions.k8s.io"
-    resources:
-    - "customresourcedefinitions"
-    verbs:
-    - "get"
-    - "list"
-    - "watch"
-    - "update"
-    - "patch"
-  - apiGroups:
-    - "admissionregistration.k8s.io"
-    resources:
-    - "validatingwebhookconfigurations"
-    verbs:
-    - "list"
-    - "watch"
-    - "get"
-  - apiGroups:
-    - "admissionregistration.k8s.io"
-    resources:
-    - "validatingwebhookconfigurations"
-    resourceNames:
-    - "secretstore-validate"
-    - "externalsecret-validate"
-    verbs:
-    - "update"
-    - "patch"
-  - apiGroups:
-    - ""
-    resources:
-    - "endpoints"
-    verbs:
-    - "list"
-    - "get"
-    - "watch"
-  - apiGroups:
-    - ""
-    resources:
-    - "events"
-    verbs:
-    - "create"
-    - "patch"
-  - apiGroups:
-    - ""
-    resources:
-    - "secrets"
-    verbs:
-    - "get"
-    - "list"
-    - "watch"
-    - "update"
-    - "patch"
-  - apiGroups:
-    - "coordination.k8s.io"
-    resources:
-    - "leases"
-    verbs:
-    - "get"
-    - "create"
-    - "update"
-    - "patch"
 ---
 # Source: external-secrets/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -17793,26 +17707,6 @@ rules:
     - "list"
     - "watch"
 ---
-# Source: external-secrets/templates/cert-controller-rbac.yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: external-secrets-operator-cert-controller
-  labels:
-    helm.sh/chart: external-secrets-0.12.1
-    app.kubernetes.io/name: external-secrets-cert-controller
-    app.kubernetes.io/instance: external-secrets-operator
-    app.kubernetes.io/version: "v0.12.1"
-    app.kubernetes.io/managed-by: Helm
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: external-secrets-operator-cert-controller
-subjects:
-  - name: external-secrets-cert-controller
-    namespace: external-secrets
-    kind: ServiceAccount
----
 # Source: external-secrets/templates/rbac.yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -17916,74 +17810,6 @@ spec:
   selector:
     app.kubernetes.io/name: external-secrets-webhook
     app.kubernetes.io/instance: external-secrets-operator
----
-# Source: external-secrets/templates/cert-controller-deployment.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: external-secrets-operator-cert-controller
-  namespace: external-secrets
-  labels:
-    helm.sh/chart: external-secrets-0.12.1
-    app.kubernetes.io/name: external-secrets-cert-controller
-    app.kubernetes.io/instance: external-secrets-operator
-    app.kubernetes.io/version: "v0.12.1"
-    app.kubernetes.io/managed-by: Helm
-spec:
-  replicas: 1
-  revisionHistoryLimit: 10
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: external-secrets-cert-controller
-      app.kubernetes.io/instance: external-secrets-operator
-  template:
-    metadata:
-      labels:
-        helm.sh/chart: external-secrets-0.12.1
-        app.kubernetes.io/name: external-secrets-cert-controller
-        app.kubernetes.io/instance: external-secrets-operator
-        app.kubernetes.io/version: "v0.12.1"
-        app.kubernetes.io/managed-by: Helm
-    spec:
-      serviceAccountName: external-secrets-cert-controller
-      automountServiceAccountToken: true
-      hostNetwork: false
-      containers:
-        - name: cert-controller
-          securityContext:
-            allowPrivilegeEscalation: false
-            capabilities:
-              drop:
-              - ALL
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            seccompProfile:
-              type: RuntimeDefault
-          image: oci.external-secrets.io/external-secrets/external-secrets:v0.12.1
-          imagePullPolicy: IfNotPresent
-          args:
-          - certcontroller
-          - --crd-requeue-interval=5m
-          - --service-name=external-secrets-operator-webhook
-          - --service-namespace=external-secrets
-          - --secret-name=external-secrets-operator-webhook
-          - --secret-namespace=external-secrets
-          - --metrics-addr=:8080
-          - --healthz-addr=:8081
-          - --loglevel=info
-          - --zap-time-encoding=epoch
-          - --enable-partial-cache=true
-          ports:
-            - containerPort: 8080
-              protocol: TCP
-              name: metrics
-          readinessProbe:
-            httpGet:
-              port: 8081
-              path: /readyz
-            initialDelaySeconds: 20
-            periodSeconds: 5
 ---
 # Source: external-secrets/templates/deployment.yaml
 apiVersion: apps/v1
@@ -18096,6 +17922,7 @@ spec:
           - --healthz-addr=:8081
           - --loglevel=info
           - --zap-time-encoding=epoch
+          - --lookahead-interval=210h
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -18118,6 +17945,33 @@ spec:
           secret:
             secretName: external-secrets-operator-webhook
 ---
+# Source: external-secrets/templates/webhook-certificate.yaml
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: external-secrets-operator-webhook
+  namespace: external-secrets
+  labels:
+    helm.sh/chart: external-secrets-0.12.1
+    app.kubernetes.io/name: external-secrets-webhook
+    app.kubernetes.io/instance: external-secrets-operator
+    app.kubernetes.io/version: "v0.12.1"
+    app.kubernetes.io/managed-by: Helm
+    external-secrets.io/component: webhook
+spec:
+  commonName: external-secrets-operator-webhook
+  dnsNames:
+    - external-secrets-operator-webhook
+    - external-secrets-operator-webhook.external-secrets
+    - external-secrets-operator-webhook.external-secrets.svc
+  issuerRef:
+    group: cert-manager.io
+    kind: ClusterIssuer
+    name: ca-issuer
+  duration: "2160h"
+  renewBefore: "720h"
+  secretName: external-secrets-operator-webhook
+---
 # Source: external-secrets/templates/validatingwebhook.yaml
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
@@ -18130,6 +17984,8 @@ metadata:
     app.kubernetes.io/version: "v0.12.1"
     app.kubernetes.io/managed-by: Helm
     external-secrets.io/component: webhook
+  annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
 webhooks:
 - name: "validate.secretstore.external-secrets.io"
   rules:
@@ -18175,6 +18031,8 @@ metadata:
     app.kubernetes.io/version: "v0.12.1"
     app.kubernetes.io/managed-by: Helm
     external-secrets.io/component: webhook
+  annotations:
+    cert-manager.io/inject-ca-from: external-secrets/external-secrets-operator-webhook
 webhooks:
 - name: "validate.externalsecret.external-secrets.io"
   rules:

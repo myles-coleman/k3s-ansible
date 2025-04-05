@@ -18,4 +18,4 @@ resources:
 - nextcloud
 - dex
 - qbittorrent
-# - external-secrets
+- external-secrets
