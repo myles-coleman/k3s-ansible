@@ -26,7 +26,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: BW_HOST
-              value: 0.0.0.0
+              value: https://vaultwarden.cowlab.org/
             - name: BW_CLIENTID
               valueFrom:
                 secretKeyRef:
