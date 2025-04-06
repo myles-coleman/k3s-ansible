@@ -7,3 +7,4 @@ token.yml
 .terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
+manifests/cluster/external-secrets/secret.yaml
