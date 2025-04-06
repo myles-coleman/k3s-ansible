@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: bitwarden-cli
-          image: beebecomebigbee/bitwarden-cli@sha256:ee22c57dc5f9d2071e534800b1231f4f7a456a32ff47052bd895475f68757d3a
+          image: beebecomebigbee/bitwarden-cli@sha256:c4788004831ec9cc4f5e8f17b0854b59da49b9c5f220825704b744e57fcada17
           imagePullPolicy: IfNotPresent
           env:
             - name: BW_HOST
