@@ -6,4 +6,3 @@ resources:
   - service.yml
   - ingress.yml
   - data-pvc.yaml
-  - network-policy.yaml
