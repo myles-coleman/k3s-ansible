@@ -1,14 +1,7 @@
-FROM debian:sid
+FROM node:18-slim
 
-ENV BW_CLI_VERSION=2025.3.0
-
-RUN apt update && \
-    apt install -y wget unzip && \
-    wget https://github.com/bitwarden/clients/releases/download/cli-v${BW_CLI_VERSION}/bw-linux-${BW_CLI_VERSION}.zip && \
-    unzip bw-linux-${BW_CLI_VERSION}.zip && \
-    chmod +x bw && \
-    mv bw /usr/local/bin/bw && \
-    rm -rfv *.zip
+RUN npm install -g @bitwarden/cli && \
+    apt update
 
 COPY entrypoint.sh /
 
