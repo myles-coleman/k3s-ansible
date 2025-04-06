@@ -4,3 +4,8 @@ resources:
   - namespace.yaml
   - helm-chart.yaml
   - selfsigned-issuer.yaml
+  - secret-stores.yaml
+  - deployment.yaml
+  - service.yaml
+  - network-policy.yaml
+  
