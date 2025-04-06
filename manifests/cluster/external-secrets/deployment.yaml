@@ -25,6 +25,8 @@ spec:
           image: beebecomebigbee/bitwarden-cli:latest
           imagePullPolicy: IfNotPresent
           env:
+            - name: BW_HOST
+              value: https://bitwarden.com
             - name: BW_CLIENTID
               valueFrom:
                 secretKeyRef:
