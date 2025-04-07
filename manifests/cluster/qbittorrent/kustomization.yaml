@@ -6,7 +6,7 @@ resources:
   - service.yaml
   - ingress.yaml
   - config-pvc.yaml
-  - wireguard-secret.yaml
+  - wireguard-external-secret.yaml
   - wireguard-config-pvc.yaml
   - nfs-pv.yaml
   - nfs-pvc.yaml

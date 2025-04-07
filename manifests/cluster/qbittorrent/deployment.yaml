@@ -23,8 +23,8 @@ spec:
           # Create config directory structure
           mkdir -p /config/wg_confs
           
-          # Copy the configuration from the configmap
-          cp /configmap/wg0.conf /config/wg_confs/wg0.conf
+          # Copy the configuration from the external secret
+          cp /secret/wg0.conf /config/wg_confs/wg0.conf
           chmod 600 /config/wg_confs/wg0.conf
           
           echo "WireGuard configuration created successfully"
@@ -32,7 +32,7 @@ spec:
         - name: wireguard-config-volume
           mountPath: /config
         - name: wireguard-secret-volume
-          mountPath: /configmap
+          mountPath: /secret
       containers:
       - name: wireguard
         image: lscr.io/linuxserver/wireguard:latest
