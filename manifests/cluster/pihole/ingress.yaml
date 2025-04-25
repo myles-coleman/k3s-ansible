@@ -9,6 +9,17 @@ spec:
   entryPoints:
     - websecure
   routes:
+    - match: Host(`pihole.cowlab.org`) && Path(`/`)
+      kind: Rule
+      services:
+        - name: pihole-external
+          port: 8080
+          passHostHeader: false
+          responseForwarding:
+            flushInterval: "100ms"
+      middlewares:
+        - name: pihole-root-to-admin
+          namespace: pihole
     - match: Host(`pihole.cowlab.org`) && PathPrefix(`/`)
       kind: Rule
       services:
