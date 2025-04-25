@@ -12,11 +12,8 @@ spec:
     - match: Host(`pihole.cowlab.org`) && Path(`/`)
       kind: Rule
       services:
-        - name: pihole-external
-          port: 8080
-          passHostHeader: false
-          responseForwarding:
-            flushInterval: "100ms"
+        - name: noop
+          kind: TraefikService
       middlewares:
         - name: pihole-root-redirect
           namespace: pihole
