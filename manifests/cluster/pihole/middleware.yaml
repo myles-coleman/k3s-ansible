@@ -1,11 +1,10 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: pihole-rewrite
+  name: pihole-redirect
   namespace: pihole
 spec:
-  replacePathRegex:
-    # Only add /admin/ if it's not already in the path
-    regex: "^/(?!admin)(.*)"
-    # This replacement inserts 'admin/' after the slash only for paths that don't already have it
-    replacement: "/admin/$1"
+  redirectRegex:
+    regex: "^/$"
+    replacement: "/admin/"
+    permanent: true

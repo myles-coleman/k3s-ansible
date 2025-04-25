@@ -11,9 +11,12 @@ spec:
   routes:
     - match: Host(`pihole.cowlab.org`) && PathPrefix(`/`)
       kind: Rule
-      middlewares:
-        - name: pihole-rewrite
-          namespace: pihole
       services:
         - name: pihole-external
           port: 80
+          passHostHeader: true
+          responseForwarding:
+            flushInterval: "100ms"
+      middlewares:
+        - name: pihole-redirect
+          namespace: pihole
