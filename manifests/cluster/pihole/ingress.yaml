@@ -18,7 +18,7 @@ spec:
           responseForwarding:
             flushInterval: "100ms"
       middlewares:
-        - name: pihole-root-to-admin
+        - name: pihole-root-to-login
           namespace: pihole
     - match: Host(`pihole.cowlab.org`) && PathPrefix(`/`)
       kind: Rule
@@ -28,6 +28,3 @@ spec:
           passHostHeader: false
           responseForwarding:
             flushInterval: "100ms"
-      middlewares:
-        - name: pihole-redirect
-          namespace: pihole
