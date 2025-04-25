@@ -5,6 +5,6 @@ metadata:
   namespace: pihole
 spec:
   redirectRegex:
-    regex: "^/$"
+    regex: "^/(|index.html)$"
     replacement: "/admin/"
     permanent: true
