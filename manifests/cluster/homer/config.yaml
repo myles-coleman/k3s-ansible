@@ -97,9 +97,9 @@ services:
   - name: "System"
     icon: "fas fa-gear"
     items:
-      - name: "PiHole"
+      - name: "Pihole"
         logo: "assets/icons/pi-hole.png"
-        keywords: "PiHole"
+        keywords: "Pihole"
         url: "https://pihole.cowlab.org/admin/login"
         target: "_blank"
       - name: "Pikvm"
