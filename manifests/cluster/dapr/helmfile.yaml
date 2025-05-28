@@ -9,5 +9,3 @@ releases:
     chart: dapr/dapr
     createNamespace: true
     wait: true
-    values:
-      - values.yaml
