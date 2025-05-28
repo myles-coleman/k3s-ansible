@@ -19,3 +19,5 @@ resources:
 - dex
 - qbittorrent
 - external-secrets
+# - cert-manager
+- dapr
