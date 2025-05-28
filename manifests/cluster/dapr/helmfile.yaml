@@ -4,7 +4,7 @@ repositories:
 
 releases:
   - name: dapr
-    namespace: dapr-system
+    namespace: dapr
     version: 1.15
     chart: dapr/dapr
     createNamespace: false
