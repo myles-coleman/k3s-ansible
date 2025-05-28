@@ -19,3 +19,4 @@ resources:
 - dex-app.yaml
 - qbittorrent-app.yaml
 - external-secrets-app.yaml
+- dapr-app.yaml
