@@ -8,4 +8,4 @@ releases:
   version: 1.15
   chart: dapr/dapr
   createNamespace: true
-  wait: false
+  wait: true
