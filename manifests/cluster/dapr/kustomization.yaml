@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: dapr
 resources:
   - namespace.yaml
-  - helm-chart.yaml
+  # - helm-chart.yaml
