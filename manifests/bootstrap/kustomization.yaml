@@ -20,3 +20,4 @@ resources:
 - qbittorrent-app.yaml
 - external-secrets-app.yaml
 - dapr-app.yaml
+- openbooks-app.yaml
