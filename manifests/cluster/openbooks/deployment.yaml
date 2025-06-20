@@ -23,7 +23,7 @@ spec:
           requests:
             memory: "512Mi"
             cpu: "250m"
-        args: ["--name", "BeeBecomeBigBeans", "--persist", "--searchbot", "searchook", "--useragent", "HexChat 2.9.1", "--log"]
+        args: ["--name", "BeeBecomeBigBeans", "--persist", "--searchbot", "searchook", "--log"]
         ports:
         - containerPort: 80
         volumeMounts:
