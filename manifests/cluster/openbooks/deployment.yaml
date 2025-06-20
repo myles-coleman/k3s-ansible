@@ -23,7 +23,7 @@ spec:
           requests:
             memory: "512Mi"
             cpu: "250m"
-        command: ["--name", "BeeBecomeBigBee", "--persist"]
+        args: ["--name", "BeeBecomeBigBee", "--persist"]
         ports:
         - containerPort: 80
         volumeMounts:
