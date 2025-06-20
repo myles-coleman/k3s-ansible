@@ -23,7 +23,7 @@ spec:
           requests:
             memory: "512Mi"
             cpu: "250m"
-        args: ["--name", "BeeBecomeBigBee", "--persist"]
+        args: ["--name", "BeeBecomeBigBeans", "--persist", "--searchbot", "searchook"]
         ports:
         - containerPort: 80
         volumeMounts:
