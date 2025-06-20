@@ -7,5 +7,5 @@ releases:
   namespace: dapr-system
   version: 1.15
   chart: dapr/dapr
-  createNamespace: false
+  createNamespace: true
   wait: false
