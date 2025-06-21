@@ -16,5 +16,5 @@ configMapGenerator:
     namespace: calibre
     options:
       disableNameSuffixHash: true
-      # annotations:
-      #   argocd.argoproj.io/sync-options: ServerSideApply=true,Replace=true
+      annotations:
+        argocd.argoproj.io/sync-options: ServerSideApply=true,Replace=true
