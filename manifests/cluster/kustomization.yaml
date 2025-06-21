@@ -22,3 +22,4 @@ resources:
 # - cert-manager
 - dapr
 - openbooks
+- calibre-web
