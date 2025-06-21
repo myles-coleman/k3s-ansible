@@ -8,3 +8,8 @@ resources:
   - persistent-volume.yaml
   - persistent-volume-claim.yaml
   - config-pvc.yaml
+
+configMapGenerator:
+  - name: calibre-metadata-db
+    files:
+      - metadata.db
