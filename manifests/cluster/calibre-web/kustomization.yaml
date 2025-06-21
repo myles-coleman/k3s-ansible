@@ -13,3 +13,7 @@ configMapGenerator:
   - name: calibre-metadata-db
     files:
       - metadata.db
+    options:
+      disableNameSuffixHash: true
+      annotations:
+        argocd.argoproj.io/sync-options: ServerSideApply=true,Replace=true
