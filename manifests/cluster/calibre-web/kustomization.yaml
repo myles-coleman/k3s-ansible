@@ -13,6 +13,7 @@ configMapGenerator:
   - name: calibre-metadata-db
     files:
       - metadata.db
+    namespace: calibre
     options:
       disableNameSuffixHash: true
       annotations:
