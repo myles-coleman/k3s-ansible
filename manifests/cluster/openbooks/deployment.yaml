@@ -23,7 +23,7 @@ spec:
           requests:
             memory: "512Mi"
             cpu: "250m"
-        args: ["--name", "BigolBeans69", "--persist", "--searchbot", "searchook", "--log"]
+        args: ["--name", "BigolBeans69", "--persist", "--searchbot", "searchook", "--log", "--no-browser-downloads"]
         ports:
         - containerPort: 80
         volumeMounts:
