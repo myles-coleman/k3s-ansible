@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: openbooks
-        image: evanbuss/openbooks:4.4.1
+        image: beebecomebigbee/openbooks:master
         resources:
           limits:
             memory: "1024Mi"
