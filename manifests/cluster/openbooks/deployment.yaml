@@ -28,7 +28,7 @@ spec:
         - containerPort: 80
         volumeMounts:
         - name: books-volume
-          mountPath: /books
+          mountPath: /
       volumes:
       - name: books-volume
         persistentVolumeClaim:
