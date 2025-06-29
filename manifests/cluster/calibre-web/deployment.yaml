@@ -37,9 +37,6 @@ spec:
           mountPath: /books
         - name: config-volume
           mountPath: /config
-        - name: metadata-db
-          mountPath: /database/metadata.db
-          subPath: metadata.db
       volumes:
       - name: books-volume
         persistentVolumeClaim:
@@ -47,6 +44,3 @@ spec:
       - name: config-volume
         persistentVolumeClaim:
           claimName: calibre-config
-      - name: metadata-db
-        configMap:
-          name: calibre-metadata-db
