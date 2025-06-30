@@ -19,22 +19,61 @@ data:
     - Developer:
         - Github:
             - abbr: GH
-              href: https://github.com/
+              href: https://github.com/myles-coleman/k3s-ansible
   services.yaml: |
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+    - Downloaders:
+        - Jellyseerr:
+            href: https://jellyseerr.cowlab.org/
+            description: Media Library Manager
+        - Sonarr:
+            href: https://sonarr.cowlab.org/
+            description: TV Show Collection Manager
+        - Radarr:
+            href: https://radarr.cowlab.org/
+            description: Movie Collection Manager
+        - Prowlarr:
+            href: https://prowlarr.cowlab.org/
+            description: Indexer Collection Manager
+        - Openbooks:
+            href: https://openbooks.cowlab.org/
+            description: Search and Download eBooks
 
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
+    - Media:
+        - Jellyfin:
+            href: https://jellyfin.cowlab.org/
+            description: Media Server
+        - Calibre-Web:
+            href: https://calibre.cowlab.org/
+            description: Browse and Read eBooks
 
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+    - Services:
+        - Nextcloud:
+            href: https://nextcloud.cowlab.org/
+            description: A Safe Home For All My Data
+        - Vaultwarden:
+            href: https://vaultwarden.cowlab.org/
+            description: Password Manager
+        - Qbittorrent:
+            href: https://qbittorrent.cowlab.org/
+            description: Torrent Client
+
+    - System:
+        - Pi-Hole:
+            href: https://pihole.cowlab.org/admin/login
+            description: Network-Wide Ad Blocker
+        - Pikvm:
+            href: https://pikvm.cowlab.org/
+            description: KVM Over IP
+        - Argo CD:
+            href: https://argocd.cowlab.org/
+            description: GitOps tool for Kubernetes
+        - Traefik:
+            href: https://traefik.cowlab.org/
+            description: Ingress Controller
+        - Longhorn:
+            href: https://longhorn.cowlab.org/
+            description: Distributed block storage
+
   widgets.yaml: |
     - kubernetes:
         cluster:
@@ -48,13 +87,12 @@ data:
           cpu: true
           memory: true
           showLabel: true
-    - resources:
-        backend: resources
-        expanded: true
-        cpu: true
-        memory: true
-        network: default
+    - datetime:
+        text_size: xl
+        format:
+          timeStyle: short
     - search:
-        provider: duckduckgo
+        provider: brave
+        focus: true
         target: _blank
   docker.yaml: ""

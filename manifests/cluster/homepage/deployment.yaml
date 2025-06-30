@@ -24,11 +24,11 @@ spec:
       enableServiceLinks: true
       containers:
         - name: homepage
-          image: "ghcr.io/gethomepage/homepage:latest"
+          image: "ghcr.io/gethomepage/homepage:v1.3.2"
           imagePullPolicy: Always
           env:
             - name: HOMEPAGE_ALLOWED_HOSTS
-              value: homepage.cowlab.org # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+              value: portal.cowlab.org # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
           ports:
             - name: http
               containerPort: 3000

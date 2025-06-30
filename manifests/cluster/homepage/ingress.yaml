@@ -16,7 +16,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`homepage.cowlab.org`)
+    - match: Host(`portal.cowlab.org`)
       kind: Rule
       services:
         - name: homepage
