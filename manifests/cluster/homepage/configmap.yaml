@@ -16,8 +16,9 @@ data:
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Github Repository:
-        - href: https://github.com/myles-coleman/k3s-ansible
+    - Repository:
+        - Github:
+            - href: https://github.com/myles-coleman/k3s-ansible
   services.yaml: |
     - Downloaders:
         - Jellyseerr:
@@ -37,7 +38,7 @@ data:
             href: https://prowlarr.cowlab.org/
             description: Indexer Collection Manager
         - Openbooks:
-            icon: openbooks.svg
+            icon: readarr.svg
             href: https://openbooks.cowlab.org/
             description: Search and Download eBooks
 
@@ -67,7 +68,7 @@ data:
 
     - System:
         - Pi-Hole:
-            icon: pihole.svg
+            icon: pi-hole.svg
             href: https://pihole.cowlab.org/admin/login
             description: Network-Wide Ad Blocker
         - Pikvm:
@@ -75,7 +76,7 @@ data:
             href: https://pikvm.cowlab.org/
             description: KVM Over IP
         - Argo CD:
-            icon: argocd.svg
+            icon: argo-cd.svg
             href: https://argocd.cowlab.org/
             description: GitOps tool for Kubernetes
         - Traefik:
@@ -95,6 +96,11 @@ data:
           memory: true
           showLabel: true
           label: "cluster"
+        nodes:
+          show: false
+          cpu: true
+          memory: true
+          showLabel: true
     - datetime:
         text_size: xl
         format:
