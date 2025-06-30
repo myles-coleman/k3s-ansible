@@ -22,3 +22,4 @@ resources:
 - dapr-app.yaml
 - openbooks-app.yaml
 - calibre-web-app.yaml
+- homepage-app.yaml
