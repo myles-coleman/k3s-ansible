@@ -16,61 +16,74 @@ data:
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
-    - Developer:
-        - Github:
-            - abbr: GH
-              href: https://github.com/myles-coleman/k3s-ansible
+    - Github Repository:
+        - href: https://github.com/myles-coleman/k3s-ansible
   services.yaml: |
     - Downloaders:
         - Jellyseerr:
+            icon: jellyseerr.svg
             href: https://jellyseerr.cowlab.org/
             description: Media Library Manager
         - Sonarr:
+            icon: sonarr.svg
             href: https://sonarr.cowlab.org/
             description: TV Show Collection Manager
         - Radarr:
+            icon: radarr.svg
             href: https://radarr.cowlab.org/
             description: Movie Collection Manager
         - Prowlarr:
+            icon: prowlarr.svg
             href: https://prowlarr.cowlab.org/
             description: Indexer Collection Manager
         - Openbooks:
+            icon: openbooks.svg
             href: https://openbooks.cowlab.org/
             description: Search and Download eBooks
 
     - Media:
         - Jellyfin:
+            icon: jellyfin.svg
             href: https://jellyfin.cowlab.org/
             description: Media Server
         - Calibre-Web:
+            icon: calibre.svg
             href: https://calibre.cowlab.org/
             description: Browse and Read eBooks
 
     - Services:
         - Nextcloud:
+            icon: nextcloud.svg
             href: https://nextcloud.cowlab.org/
             description: A Safe Home For All My Data
         - Vaultwarden:
+            icon: vaultwarden.svg
             href: https://vaultwarden.cowlab.org/
             description: Password Manager
         - Qbittorrent:
+            icon: qbittorrent.svg
             href: https://qbittorrent.cowlab.org/
             description: Torrent Client
 
     - System:
         - Pi-Hole:
+            icon: pihole.svg
             href: https://pihole.cowlab.org/admin/login
             description: Network-Wide Ad Blocker
         - Pikvm:
+            icon: pikvm.svg
             href: https://pikvm.cowlab.org/
             description: KVM Over IP
         - Argo CD:
+            icon: argocd.svg
             href: https://argocd.cowlab.org/
             description: GitOps tool for Kubernetes
         - Traefik:
+            icon: traefik.svg
             href: https://traefik.cowlab.org/
             description: Ingress Controller
         - Longhorn:
+            icon: longhorn.svg
             href: https://longhorn.cowlab.org/
             description: Distributed block storage
 
@@ -82,17 +95,11 @@ data:
           memory: true
           showLabel: true
           label: "cluster"
-        nodes:
-          show: true
-          cpu: true
-          memory: true
-          showLabel: true
     - datetime:
         text_size: xl
         format:
           timeStyle: short
     - search:
         provider: brave
-        focus: true
         target: _blank
   docker.yaml: ""
