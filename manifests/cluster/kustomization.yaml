@@ -19,7 +19,7 @@ resources:
 - dex
 - qbittorrent
 - external-secrets
-# - cert-manager
+- cert-manager
 - dapr
 - openbooks
 - calibre-web
