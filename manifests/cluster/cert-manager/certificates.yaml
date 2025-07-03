@@ -2,13 +2,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: staging-cert
-  namespace: cert-manager
+  name: cowlab
+  namespace: default
 spec:
-  secretName: staging-cert-tls
+  secretName: cowlab-staging-tls
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer
+  commonName: "*.cowlab.org"
   dnsNames:
     - "*.cowlab.org"
     - "cowlab.org"
@@ -16,13 +17,14 @@ spec:
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: prod-cert
-#   namespace: cert-manager
+#   name: cowlab
+#   namespace: argocd
 # spec:
-#   secretName: prod-cert-tls
+#   secretName: cowlab-production-tls
 #   issuerRef:
 #     name: letsencrypt-production
 #     kind: ClusterIssuer
+#   commonName: "*.cowlab.org"
 #   dnsNames:
 #     - "*.cowlab.org"
 #     - "cowlab.org"
