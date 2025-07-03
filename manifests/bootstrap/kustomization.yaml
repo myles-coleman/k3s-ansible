@@ -19,6 +19,7 @@ resources:
 - dex-app.yaml
 - qbittorrent-app.yaml
 - external-secrets-app.yaml
+- cert-manager-app.yaml
 - dapr-app.yaml
 - openbooks-app.yaml
 - calibre-web-app.yaml
