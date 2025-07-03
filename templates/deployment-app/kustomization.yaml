@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  # Uncomment as needed
+  # - configmap.yaml
+  # For NFS storage (NAS)
+  # - persistent-volume-nfs.yaml
+  # - persistent-volume-claim-nfs.yaml
+  # For Longhorn storage (Database)
+  # - persistent-volume-claim-longhorn.yaml

@@ -1,0 +1,13 @@
+repositories:
+- name: {{REPO_NAME}}
+  url: {{REPO_URL}}
+
+releases:
+- name: {{APP_NAME}}
+  namespace: {{APP_NAME}}
+  version: {{CHART_VERSION}}
+  chart: {{REPO_NAME}}/{{CHART_NAME}}
+  createNamespace: false
+  wait: false
+  values:
+    - values.yaml

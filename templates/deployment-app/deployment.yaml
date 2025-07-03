@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{APP_NAME}}
+  namespace: {{APP_NAME}}
+  labels:
+    app: {{APP_NAME}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{APP_NAME}}
+  template:
+    metadata:
+      labels:
+        app: {{APP_NAME}}
+    spec:
+      containers:
+      - name: {{APP_NAME}}
+        image: {{IMAGE}}:{{TAG}}
+        ports:
+        - containerPort: {{CONTAINER_PORT}}
+        resources:
+          requests:
+            memory: "{{MEMORY_REQUEST}}"
+            cpu: "{{CPU_REQUEST}}"
+          limits:
+            memory: "{{MEMORY_LIMIT}}"
+            cpu: "{{CPU_LIMIT}}"
+        # Uncomment and customize as needed
+        # env:
+        # - name: ENV_VAR_NAME
+        #   value: "env_var_value"
+        # volumeMounts:
+        # - name: config-volume
+        #   mountPath: /path/to/config
+        # - name: data-volume
+        #   mountPath: /path/to/data
+      # Uncomment and customize as needed
+      # volumes:
+      # - name: config-volume
+      #   configMap:
+      #     name: {{APP_NAME}}-config
+      # - name: data-volume
+      #   persistentVolumeClaim:
+      #     claimName: {{APP_NAME}}-pvc

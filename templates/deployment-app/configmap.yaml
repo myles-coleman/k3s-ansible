@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{APP_NAME}}-config
+  namespace: {{APP_NAME}}
+data:
+  # Add your configuration key-value pairs here
+  # config.json: |
+  #   {
+  #     "key": "value",
+  #     "setting": "option"
+  #   }
+  # settings.conf: |
+  #   parameter=value
+  #   option=setting
