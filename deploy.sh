@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ansible-playbook site.yml --ask-vault-pass
+ansible-playbook site.yml -i inventory/homelab-cluster/hosts.ini --ask-vault-pass
