@@ -4,7 +4,6 @@ resources:
 - homer-app.yaml
 - sonarr-app.yaml
 - radarr-app.yaml
-- readarr-app.yaml
 - lidarr-app.yaml
 - prowlarr-app.yaml
 - jellyfin-app.yaml
