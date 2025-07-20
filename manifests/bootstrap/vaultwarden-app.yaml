@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: manifests/cluster/vaultwarden
-    repoURL: https://github.com/myles-coleman/k3s-ansible
+    repoURL: "https://github.com/myles-coleman/k3s-ansible"
     targetRevision: main
   syncPolicy:
     automated:
