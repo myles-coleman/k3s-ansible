@@ -1,10 +1,8 @@
 #!/bin/bash
 
-REPO_URL="https://github.com/myles-coleman/k3s-ansible"
 BOOTSTRAP_DIR="manifests/bootstrap"
 CLUSTER_KUSTOMIZATION="manifests/cluster/kustomization.yaml"
 
-# Create a temporary file for the new kustomization content
 TEMP_KUST=$(mktemp)
 cat "$BOOTSTRAP_DIR/kustomization.yaml" | grep -v "^- " > "$TEMP_KUST"
 
@@ -27,7 +25,7 @@ spec:
   project: default
   source:
     path: manifests/cluster/$resource
-    repoURL: $REPO_URL
+    repoURL: "https://github.com/myles-coleman/k3s-ansible"
     targetRevision: main
   syncPolicy:
     automated:
