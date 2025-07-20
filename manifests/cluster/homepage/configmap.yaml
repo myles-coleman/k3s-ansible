@@ -87,6 +87,10 @@ data:
             icon: longhorn.svg
             href: https://longhorn.cowlab.org/
             description: Distributed block storage
+        - Nginx Proxy Manager:
+            icon: nginx-proxy-manager.svg
+            href: https://npm.cowlab.org/
+            description: Proxy Server
 
   widgets.yaml: |
     - kubernetes:
