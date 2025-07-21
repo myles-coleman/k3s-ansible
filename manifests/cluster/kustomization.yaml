@@ -13,13 +13,13 @@ resources:
 - longhorn
 # - pihole
 # - pikvm
-- monitoring
+# - monitoring
 - nextcloud
 - dex
 - qbittorrent
 - external-secrets
 - cert-manager
-- dapr
+# - dapr
 - openbooks
 - calibre-web
 - homepage
