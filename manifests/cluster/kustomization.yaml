@@ -13,7 +13,7 @@ resources:
 - longhorn
 # - pihole
 # - pikvm
-# - monitoring
+- monitoring
 - nextcloud
 - dex
 - qbittorrent
