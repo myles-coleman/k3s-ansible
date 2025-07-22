@@ -1,0 +1,22 @@
+# Common inputs for Terragrunt
+
+# Basic project configuration
+environment: dev
+project_name: homelab
+cluster_name: homelab-k3s-cluster
+
+# AWS configuration
+aws_region: us-west-1
+
+# Common tags for all resources
+common_tags:
+  Environment: dev
+  Project: homelab
+  Cluster: homelab-k3s-cluster
+  Terraform: true
+  ManagedBy: Terragrunt
+
+# ArgoCD configuration
+argocd_namespace: argocd
+argocd_version: v2.8.4
+git_repo_url: https://github.com/myles-coleman/k3s-ansible
