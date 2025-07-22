@@ -6,6 +6,8 @@ resources:
 # - pikvm-app.yaml
 # - monitoring-app.yaml
 # - dapr-app.yaml
+# - pihole-app.yaml
+# - pikvm-app.yaml
 - homer-app.yaml
 - sonarr-app.yaml
 - radarr-app.yaml
@@ -15,8 +17,6 @@ resources:
 - vaultwarden-app.yaml
 - discord-bot-app.yaml
 - longhorn-app.yaml
-# - pihole-app.yaml
-# - pikvm-app.yaml
 - monitoring-app.yaml
 - nextcloud-app.yaml
 - dex-app.yaml
