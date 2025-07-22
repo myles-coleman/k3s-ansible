@@ -7,3 +7,8 @@ preUpgradeChecker:
 metrics:
   serviceMonitor:
     enabled: true
+
+defaultBackupStore:
+  backupTarget: "s3://myles-homelab-backups/kubernetes@us-west-1/longhorn-backups/"
+  backupTargetCredentialSecret: "longhorn-backup-secret"
+  pollInterval: 300
