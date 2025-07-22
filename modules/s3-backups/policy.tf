@@ -1,4 +1,3 @@
-# IAM policy document for Longhorn backup access
 data "aws_iam_policy_document" "longhorn_backup_policy" {
   statement {
     sid    = "GrantLonghornBackupstoreAccess"
@@ -18,7 +17,6 @@ data "aws_iam_policy_document" "longhorn_backup_policy" {
   }
 }
 
-# IAM policy
 resource "aws_iam_policy" "longhorn_backup_policy" {
   name        = "${var.cluster_name}-longhorn-backup-policy"
   description = "Policy for Longhorn backup access to S3"
@@ -31,7 +29,6 @@ resource "aws_iam_policy" "longhorn_backup_policy" {
   }
 }
 
-# IAM user for Longhorn backups
 resource "aws_iam_user" "longhorn_backup_user" {
   name = "${var.cluster_name}-longhorn-backup-user"
   path = "/"
@@ -43,13 +40,11 @@ resource "aws_iam_user" "longhorn_backup_user" {
   }
 }
 
-# Attach policy to user
 resource "aws_iam_user_policy_attachment" "longhorn_backup_policy_attachment" {
   user       = aws_iam_user.longhorn_backup_user.name
   policy_arn = aws_iam_policy.longhorn_backup_policy.arn
 }
 
-# Create access key for the user
 resource "aws_iam_access_key" "longhorn_backup_user_key" {
   user = aws_iam_user.longhorn_backup_user.name
 }

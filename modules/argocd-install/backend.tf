@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket       = "myles-homelab-tfstate"
     encrypt      = true
-    key          = "k3s-ansible/argocd-install/terraform.tfstate"
+    key          = "modules/argocd-install/terraform.tfstate"
     region       = "us-west-1"
     use_lockfile = true
   }
