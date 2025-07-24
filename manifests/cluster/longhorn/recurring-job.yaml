@@ -5,6 +5,7 @@ metadata:
   name: backup-job
   namespace: longhorn-system
 spec:
+  name: backup-job
   cron: "0 2 * * *" # daily at 2 AM
   task: "backup" # periodically create snapshots then do backups after cleaning up outdated snapshots
   groups:
