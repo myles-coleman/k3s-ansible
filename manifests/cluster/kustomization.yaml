@@ -8,7 +8,7 @@ resources:
 - prowlarr
 # - jellyfin
 - jellyseerr
-- vaultwarden
+# - vaultwarden
 - discord-bot
 - longhorn
 # - pihole
