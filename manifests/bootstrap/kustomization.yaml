@@ -8,7 +8,7 @@ resources:
 # - dapr-app.yaml
 # - pihole-app.yaml
 # - pikvm-app.yaml
-# - vaultwarden-app.yaml
+- vaultwarden-app.yaml
 - homer-app.yaml
 - sonarr-app.yaml
 - radarr-app.yaml
