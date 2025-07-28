@@ -14,7 +14,6 @@ resources:
 - lidarr-app.yaml
 - prowlarr-app.yaml
 - jellyseerr-app.yaml
-- vaultwarden-app.yaml
 - discord-bot-app.yaml
 - longhorn-app.yaml
 - monitoring-app.yaml
