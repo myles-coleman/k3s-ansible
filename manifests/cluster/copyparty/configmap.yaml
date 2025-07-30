@@ -7,28 +7,28 @@ data:
   copyparty.conf: |
     # copyparty configuration
     [global]
-      p: 3923  # listen on port 3923
-      e2dsa    # enable file indexing and filesystem scanning
-      e2ts     # enable multimedia indexing
-      hist: /cfg/hists/  # store history in config folder
+      p: 3923
+      e2dsa
+      e2ts
+      hist: /cfg/hists/
     
     # create default user accounts
     [accounts]
-      admin: changeme123  # Change this password!
+      admin: changeme123
     
     # create volumes - main shared folder
     [/]
       /w
       accs:
-        r: *      # everyone gets read-access
-        rw: admin # admin gets read-write
+        r: *
+        rw: admin
     
     # config folder for uploads
     [/uploads]
       /w/uploads
       accs:
-        w: *      # anyone can upload
-        rw: admin # admin can manage uploads
+        w: *
+        rw: admin
       flags:
-        e2d       # enable uploads database
-        nodupe    # reject duplicate uploads
+        e2d
+        nodupe
