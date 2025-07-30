@@ -4,6 +4,8 @@ resources:
   - namespace.yaml
   - configmap.yaml
   - persistent-volume-claim-longhorn.yaml
+  - persistent-volume-nfs.yaml
+  - persistent-volume-claim-nfs.yaml
   - deployment.yaml
   - service.yaml
   - ingress.yaml

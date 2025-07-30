@@ -42,6 +42,8 @@ spec:
           subPath: copyparty.conf
         - name: data-volume
           mountPath: /w
+        - name: media-volume
+          mountPath: /w/media
         - name: persistent-config
           mountPath: /cfg/hists
         livenessProbe:
@@ -63,6 +65,9 @@ spec:
       - name: data-volume
         persistentVolumeClaim:
           claimName: copyparty-data
+      - name: media-volume
+        persistentVolumeClaim:
+          claimName: copyparty-media
       - name: persistent-config
         persistentVolumeClaim:
           claimName: copyparty-config

@@ -23,6 +23,13 @@ data:
         r: *
         rw: admin
     
+    # media folder (NFS mount)
+    [/media]
+      /w/media
+      accs:
+        r: *
+        rw: admin
+    
     # config folder for uploads
     [/uploads]
       /w/uploads
