@@ -38,9 +38,12 @@ spec:
           value: "1000"
         volumeMounts:
         - name: config-volume
-          mountPath: /cfg
+          mountPath: /cfg/copyparty.conf
+          subPath: copyparty.conf
         - name: data-volume
           mountPath: /w
+        - name: persistent-config
+          mountPath: /cfg/hists
         livenessProbe:
           httpGet:
             path: /
@@ -55,8 +58,11 @@ spec:
           periodSeconds: 5
       volumes:
       - name: config-volume
-        persistentVolumeClaim:
-          claimName: copyparty-config
+        configMap:
+          name: copyparty-config
       - name: data-volume
         persistentVolumeClaim:
           claimName: copyparty-data
+      - name: persistent-config
+        persistentVolumeClaim:
+          claimName: copyparty-config
