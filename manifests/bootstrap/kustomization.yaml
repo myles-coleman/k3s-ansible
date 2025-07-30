@@ -26,3 +26,4 @@ resources:
 - openbooks-app.yaml
 - calibre-web-app.yaml
 - homepage-app.yaml
+- copyparty-app.yaml
