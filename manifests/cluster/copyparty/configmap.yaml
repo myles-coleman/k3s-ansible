@@ -23,7 +23,7 @@ data:
         r: *
         rw: admin
     
-    # media folder (NFS mount)
+    # Media folder (NFS mount: /mnt/md0/data/media)
     [/media]
       /w/media
       accs:

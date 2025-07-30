@@ -44,7 +44,7 @@ spec:
           mountPath: /w
         - name: media-volume
           mountPath: /w/media
-          subPath: media
+          subPath: data/media
         - name: persistent-config
           mountPath: /cfg/hists
         livenessProbe:
