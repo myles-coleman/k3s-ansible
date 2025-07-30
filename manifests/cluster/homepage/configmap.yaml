@@ -65,6 +65,9 @@ data:
             icon: qbittorrent.svg
             href: https://qbittorrent.cowlab.org/
             description: Torrent Client
+        - Copyparty:
+            href: https://copyparty.cowlab.org/
+            description: File Sharing and Management
 
     - System:
         - Pi-Hole:
