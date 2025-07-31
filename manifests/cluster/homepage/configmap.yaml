@@ -68,6 +68,9 @@ data:
         - Copyparty:
             href: https://copyparty.cowlab.org/
             description: File Sharing and Management
+        - Llama:
+            href: https://chat.cowlab.org/
+            description: AI Chat
 
     - System:
         - Pi-Hole:
