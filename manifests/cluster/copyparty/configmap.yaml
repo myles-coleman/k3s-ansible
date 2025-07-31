@@ -21,13 +21,13 @@ data:
       /w
       accs:
         r: *
-        rw: admin
+        rw: *
     
     # Media folder (NFS mount: /mnt/md0/data/media)
     [/media]
       /w/media
       accs:
-        r: *
+        r: admin
         rw: admin
     
     # config folder for uploads
@@ -35,7 +35,7 @@ data:
       /w/uploads
       accs:
         w: *
-        rw: admin
+        rw: *
       flags:
         e2d
         nodupe
