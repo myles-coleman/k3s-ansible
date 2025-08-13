@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nixos-mcp
-        image: ghcr.io/beebecomebigbee/nixos-mcp@sha256:175b456247f4dface03f10cfa57c5be66d551e936b151ea826c7a0fc38054264
+        image: beebecomebigbee/nixos-mcp@sha256:175b456247f4dface03f10cfa57c5be66d551e936b151ea826c7a0fc38054264
         ports:
         - containerPort: 8080
         resources:
