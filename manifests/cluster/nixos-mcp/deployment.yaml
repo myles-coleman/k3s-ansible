@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nixos-mcp
-        image: beebecomebigbee/nixos-mcp@sha256:175b456247f4dface03f10cfa57c5be66d551e936b151ea826c7a0fc38054264
+        image: beebecomebigbee/nixos-mcp@sha256:71fcb5fa4aef98bdd27f96145c9c0f18adc1041ffd9acbb50d44f74c0c4e5b7c
         ports:
         - containerPort: 8080
         resources:
