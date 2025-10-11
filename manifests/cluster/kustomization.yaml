@@ -13,7 +13,7 @@ resources:
 - longhorn
 # - pihole
 # - pikvm
-- monitoring
+# - monitoring
 - nextcloud
 - dex
 - qbittorrent
@@ -24,4 +24,5 @@ resources:
 - calibre-web
 - homepage
 - copyparty
-- nixos-mcp
+# - nixos-mcp
+- metrics-server
