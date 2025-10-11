@@ -17,7 +17,6 @@ resources:
 - jellyseerr-app.yaml
 - discord-bot-app.yaml
 - longhorn-app.yaml
-- monitoring-app.yaml
 - nextcloud-app.yaml
 - dex-app.yaml
 - qbittorrent-app.yaml
@@ -27,4 +26,4 @@ resources:
 - calibre-web-app.yaml
 - homepage-app.yaml
 - copyparty-app.yaml
-- nixos-mcp-app.yaml
+- metrics-server-app.yaml
