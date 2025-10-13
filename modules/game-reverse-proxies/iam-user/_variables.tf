@@ -1,19 +1,19 @@
 variable "user_name" {
   description = "Name of the IAM user for automation"
   type        = string
-  default     = "palworld-automation"
+  default     = "game-automation"
 }
 
 variable "profile_name" {
   description = "AWS CLI profile name for the credentials file"
   type        = string
-  default     = "palworld-automation"
+  default     = "game-automation"
 }
 
 variable "ec2_instance_name" {
   description = "Name tag of the EC2 instance to control"
   type        = string
-  default     = "palworld-reverse-proxy"
+  default     = "game-reverse-proxies"
 }
 
 variable "ec2_instance_arn" {

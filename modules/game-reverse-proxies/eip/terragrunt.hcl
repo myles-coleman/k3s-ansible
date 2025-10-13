@@ -7,12 +7,12 @@ locals {
 }
 
 terraform {
-  source = "${get_repo_root()}/modules/palworld-reverse-proxy/eip"
+  source = "${get_repo_root()}/modules/game-reverse-proxies/eip"
 }
 
 # Dependency on EC2 instance
 dependency "ec2" {
-  config_path = "${get_repo_root()}/modules/palworld-reverse-proxy/ec2"
+  config_path = "${get_repo_root()}/modules/game-reverse-proxies/ec2"
   
   # Mock outputs for plan/validate without deploying EC2 first
   mock_outputs = {
@@ -31,7 +31,7 @@ inputs = {
   tags = merge(
     local.common_inputs.common_tags,
     {
-      Name = "palworld-reverse-proxy-eip"
+      Name = "game-reverse-proxies-eip"
     }
   )
 }

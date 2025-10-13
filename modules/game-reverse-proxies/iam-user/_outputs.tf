@@ -2,23 +2,23 @@
 
 output "user_name" {
   description = "Name of the IAM user"
-  value       = aws_iam_user.palworld_automation.name
+  value       = aws_iam_user.game_automation.name
 }
 
 output "user_arn" {
   description = "ARN of the IAM user"
-  value       = aws_iam_user.palworld_automation.arn
+  value       = aws_iam_user.game_automation.arn
 }
 
 output "access_key_id" {
   description = "Access key ID for the IAM user"
-  value       = aws_iam_access_key.palworld_automation.id
+  value       = aws_iam_access_key.game_automation.id
   sensitive   = true
 }
 
 output "secret_access_key" {
   description = "Secret access key for the IAM user"
-  value       = aws_iam_access_key.palworld_automation.secret
+  value       = aws_iam_access_key.game_automation.secret
   sensitive   = true
 }
 

@@ -1,4 +1,4 @@
-# Minimal VPC variables for Palworld reverse proxy
+# Minimal VPC variables for game reverse proxy
 
 variable "vpc_module_version" {
   description = "Version of the terraform-aws-modules/vpc/aws module"

@@ -112,7 +112,7 @@ export ADMIN_CIDR_BLOCKS='["0.0.0.0/0"]'
 # Deploy everything
 terragrunt run-all apply \\
   --terragrunt-include-dir modules/vpc \\
-  --terragrunt-include-dir modules/palworld-reverse-proxy
+  --terragrunt-include-dir modules/game-reverse-proxies
 ```
 
 ### Option 2: Deploy Step-by-Step
@@ -134,7 +134,7 @@ public_subnet_id = "subnet-xxxxx"
 #### Step 2: Deploy Security Group ($0/month)
 
 ```bash
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/security-group
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/security-group
 terragrunt init
 terragrunt apply
 ```
@@ -147,7 +147,7 @@ security_group_id = "sg-xxxxx"
 #### Step 3: Deploy EC2 Instance ($7.50/month)
 
 ```bash
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies
 
 # Set environment variables
 export TAILSCALE_AUTH_KEY="tskey-auth-xxxxx-xxxxxx"
@@ -166,7 +166,7 @@ instance_public_ip = "x.x.x.x"
 #### Step 4: Deploy Elastic IP ($0/month)
 
 ```bash
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/eip
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/eip
 terragrunt init
 terragrunt apply
 ```
@@ -181,7 +181,7 @@ allocation_id = "eipalloc-xxxxx"
 
 ```bash
 # Get the Elastic IP
-EIP=$(cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/eip && terragrunt output -raw public_ip)
+EIP=$(cd /home/bee/k3s-ansible/modules/game-reverse-proxies/eip && terragrunt output -raw public_ip)
 
 # Wait for SSH to be ready
 sleep 60
@@ -206,7 +206,7 @@ sudo journalctl -u palworld-proxy -f
 
 ```bash
 # Get Elastic IP
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/eip
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/eip
 EIP=$(terragrunt output -raw public_ip)
 echo "Update bigbeevpn.mooo.com to: $EIP"
 ```
@@ -256,11 +256,11 @@ Modules must be deployed in order:
 
 ```bash
 # Check security group
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/security-group
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/security-group
 terragrunt output security_group_id
 
 # Verify instance is running
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies
 terragrunt output instance_id
 
 aws ec2 describe-instances --instance-ids <instance-id>
@@ -311,7 +311,7 @@ terragrunt apply
 If you modify `user-data.sh`:
 
 ```bash
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies
 
 # Recreate instance
 terragrunt taint module.ec2_instance.aws_instance.this[0]
@@ -324,15 +324,15 @@ Delete in reverse order:
 
 ```bash
 # 1. Delete EIP
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/eip
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/eip
 terragrunt destroy
 
 # 2. Delete EC2
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies
 terragrunt destroy
 
 # 3. Delete Security Group
-cd /home/bee/k3s-ansible/modules/palworld-reverse-proxy/security-group
+cd /home/bee/k3s-ansible/modules/game-reverse-proxies/security-group
 terragrunt destroy
 
 # 4. Delete VPC

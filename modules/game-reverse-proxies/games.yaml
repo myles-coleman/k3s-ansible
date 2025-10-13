@@ -1,0 +1,22 @@
+games:
+  - name: palworld
+    port: 8211
+    protocol: udp
+    description: "Palworld game server"
+    enabled: true
+    
+  - name: minecraft
+    port: 25565
+    protocol: tcp
+    description: "Minecraft Java Edition"
+    enabled: false
+    
+  - name: ark
+    port: 7777
+    protocol: udp
+    description: "ARK: Survival Evolved"
+    enabled: false
+
+homelab:
+  tailscale_hostname: "homelab"
+  fallback_ip: "100.66.232.121"

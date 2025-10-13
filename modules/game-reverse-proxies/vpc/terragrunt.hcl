@@ -7,12 +7,12 @@ locals {
 }
 
 terraform {
-  source = "${get_repo_root()}/modules/palworld-reverse-proxy/vpc"
+  source = "${get_repo_root()}/modules/game-reverse-proxies/vpc"
 }
 
 inputs = {
   # VPC Configuration
-  name     = "palworld-vpc"
+  name     = "game-vpc"
   vpc_cidr = "10.0.0.0/24"  # Minimal /24 CIDR (256 IPs total)
   
   # Single AZ for cost savings (no cross-AZ data transfer costs)
@@ -35,8 +35,8 @@ inputs = {
   tags = merge(
     local.common_inputs.common_tags,
     {
-      Name        = "palworld-vpc"
-      Purpose     = "Palworld reverse proxy"
+      Name        = "game-vpc"
+      Purpose     = "Game reverse proxy"
       CostCenter  = "gaming"
     }
   )

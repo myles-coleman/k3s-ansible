@@ -1,4 +1,4 @@
-# Minimal cost-optimized VPC for Palworld reverse proxy
+# Minimal cost-optimized VPC for game reverse proxy
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = var.vpc_module_version

@@ -7,7 +7,7 @@ variable "ec2_module_version" {
 variable "name" {
   description = "Name of the EC2 instance"
   type        = string
-  default     = "palworld-reverse-proxy"
+  default     = "game-reverse-proxy"
 }
 
 variable "ami" {
