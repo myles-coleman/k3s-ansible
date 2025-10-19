@@ -31,8 +31,9 @@ echo "Installing Tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
 
 # Start and authenticate Tailscale (disable DNS management to prevent resolv.conf overwrite)
+# Use --force-reauth to handle ephemeral nodes that were deleted when instance stopped
 echo "Authenticating Tailscale..."
-tailscale up --authkey=${tailscale_auth_key} --hostname=${hostname} --accept-routes --accept-dns=false --advertise-exit-node=false
+tailscale up --authkey=${tailscale_auth_key} --hostname=${hostname} --accept-routes --accept-dns=false --advertise-exit-node=false --force-reauth
 
 # Wait for Tailscale to be ready
 echo "Waiting for Tailscale to be ready..."

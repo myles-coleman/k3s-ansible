@@ -33,7 +33,7 @@ curl -fsSL https://tailscale.com/install.sh | sh
 
 # Start and authenticate Tailscale (disable DNS management to prevent resolv.conf overwrite)
 echo "Authenticating Tailscale..."
-tailscale up --authkey=${tailscale_auth_key} --hostname=game-reverse-proxies --accept-routes --accept-dns=false --advertise-exit-node=false
+tailscale up --authkey=${tailscale_auth_key} --hostname=game-reverse-proxies --accept-routes --accept-dns=false --advertise-exit-node=false --force-reauth
 
 # Wait for Tailscale to be ready
 echo "Waiting for Tailscale to be ready..."
