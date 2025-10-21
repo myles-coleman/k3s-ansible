@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: metrics-server
   project: default
   source:
     path: manifests/cluster/metrics-server
